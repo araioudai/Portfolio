@@ -39,7 +39,7 @@ nav {
     top: 100%;                /* trigger の直下に配置 */
     left: 0;                  /* 左端を揃える */
     min-width: 200px;         /* 幅の最低値 */
-    background: #111827;      /* 背景色（さらに濃いグレー） */
+    background: #111827;    /* 背景色（さらに濃いグレー） */
     border-radius: 10px;      /* 角丸 */
     box-shadow: 0 8px 20px rgba(0,0,0,.3); /* 影を付けて浮かせる */
     padding: 10px;            /* 内側余白 */
@@ -53,7 +53,7 @@ nav {
     display: block;        /* ブロック要素化 → 全体クリック可能 */
     padding: 8px 10px;     /* 項目の余白 */
     border-radius: 6px;    /* 角丸 */
-    color: #e5e7eb;        /* 文字色 */
+    color: #e5e7eb;      /* 文字色 */
     text-decoration: none; /* 下線を消す */
 }
 .menu a:hover, .menu a:focus {
@@ -68,6 +68,18 @@ nav {
     display: flex;
     opacity: 1;
     transform: translateY(0);
+}
+
+/* 各項目ごとのタイトル */
+.title{
+    font-size: 50px;
+    background-color: #e5e7eb;
+    color: #0f172a;
+}
+
+/* スクロールそスムーズに */
+html {
+  scroll-behavior: smooth;
 }
 
 /* 中央寄せのテキスト */
