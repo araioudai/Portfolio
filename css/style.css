@@ -60,8 +60,12 @@ nav {
     background: #374151;   /* ホバー時に背景色変更 */
 }
   
-/* .open クラスが付いたら表示 */
-.item.open .menu {
+/* サブメニューを表示する条件
+   .item.open（クリックで開いた時）
+   .item.hover（PC用） */
+.item.open .menu 
+.item:hover .menu
+{
     display: flex;
 }
 
