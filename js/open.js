@@ -1,4 +1,4 @@
-//すべての .trigger にクリックイベントを付与
+//クリックでメニューを開閉する処理
 const items = document.querySelectorAll('.item');
 
 items.forEach(item => {
@@ -6,13 +6,13 @@ items.forEach(item => {
   btn.addEventListener('click', (e) => {
     //他のメニューを閉じる
     items.forEach(i => { if (i !== item) i.classList.remove('open'); });
-    //今クリックした要素をトグル
+    //今クリックした要素をトグル（開く or 閉じる）
     item.classList.toggle('open');
-    e.stopPropagation(); //外側クリックイベントと干渉しないように
+    e.stopPropagation(); //外側クリックイベントと干渉しないようにする
   });
 });
 
-//画面のどこかをクリックしたら閉じる
+//画面のどこかをクリックしたら全て閉じる
 document.addEventListener('click', () => {
   items.forEach(i => i.classList.remove('open'));
 });
