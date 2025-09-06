@@ -1,62 +1,76 @@
+/* 全体の基本スタイル */
 body{
     font-family: system-ui, sans-serif; /* フォント設定 */
-    background: #0f172a; /* 背景色（濃いグレー） */
-    color:#e5e7eb; /* 文字色（白） */
-    margin: 0; /* ブラウザデフォルトの余白をリセット */
-    padding: 40px; /* 全体の余白 */
+    background: #0f172a;              /* 背景色（濃いグレー） */
+    color:#e5e7eb;                    /* 文字色（白） */
+    margin: 0;                          /* ブラウザデフォルトの余白をリセット */
+    padding: 40px;                      /* 全体の余白 */
 }
 
+nav {
+    display: flex;      /* 横並びレイアウト */
+    gap: 40px;          /* 各項目の間隔 */
+    flex-wrap: wrap;    /* 画面幅が狭い時は折り返す（モバイル対応） */
+}
+
+/* メニュー項目 */
 .item {
-    position: relative; /* 絶対配置するサブメニューの基準点にする */
-    display: inline-block; /* 横並びに配置 */
-    margin-right: 40px;    /* 項目間の余白 */
+    position: relative; /* サブメニューの基準点にする */
 }
 
+/* メニューを開くためのボタン */
 .trigger {
-    padding: 8px 12px;      /* クリック領域を広げるための余白 */
-    cursor: pointer;        /* マウスカーソルをポインタに変更 */
-    border-radius: 8px;     /* 角を丸める */
-    transition: background .2s; /* ホバー時の背景色変化をスムーズに */
+    padding: 8px 12px;          /* ボタンの余白 */
+    cursor: pointer;            /* マウスをポインタに変更 */
+    border-radius: 8px;         /* 角丸 */
+    transition: background .2s; /* 背景色変化をスムーズに */
+    background: transparent;    /* デフォルト背景なし */
+    border: none;               /* 枠線を消す */
+    color: inherit;             /* 親要素の文字色を継承 */
+    font-size: 18px;            /* 文字サイズ */
+}
+.trigger:hover, .trigger:focus {
+    background: #1f2937; /* ホバー or フォーカスで背景色を暗めに */
 }
 
-.trigger:hover {
-    background: #1f2937; /* ホバー時に背景色を暗めに変更 */
-}
-
+/* サブメニュー */
 .menu {
-    position: absolute;   /* 親要素（.item）を基準に絶対配置 */
-    top: 100%;            /* trigger のすぐ下に表示 */
-    left: 0;              /* 左端をそろえる */
-    min-width: 200px;     /* メニューの最低幅 */
-    background: #111827;  /* 背景色（濃いグレー） */
-    border-radius: 10px;  /* 角丸 */
-    box-shadow: 0 8px 20px rgba(0,0,0,.3); /* ドロップシャドウ */
-    padding: 10px;        /* 内側余白 */
-    display: none;        /* 初期状態では非表示 */
+    position: absolute;       /* .item を基準に絶対配置 */
+    top: 100%;                /* trigger の直下に配置 */
+    left: 0;                  /* 左端を揃える */
+    min-width: 200px;         /* 幅の最低値 */
+    background: #111827;      /* 背景色（さらに濃いグレー） */
+    border-radius: 10px;      /* 角丸 */
+    box-shadow: 0 8px 20px rgba(0,0,0,.3); /* 影を付けて浮かせる */
+    padding: 10px;            /* 内側余白 */
+    display: none;            /* 初期状態では非表示 */
+    flex-direction: column;   /* 子要素を縦並びに */
+    z-index: 10;              /* 他の要素より前に表示 */
 }
 
+/* サブメニュー内のリンク */
 .menu a {
-    display: block;        /* リンクをブロック要素化 → 全体クリック可能に */
+    display: block;        /* ブロック要素化 → 全体クリック可能 */
     padding: 8px 10px;     /* 項目の余白 */
-    border-radius: 6px;    /* リンクも角丸 */
-    color: #e5e7eb;        /* リンク文字色 */
+    border-radius: 6px;    /* 角丸 */
+    color: #e5e7eb;        /* 文字色 */
     text-decoration: none; /* 下線を消す */
 }
+.menu a:hover, .menu a:focus {
+    background: #374151;   /* ホバー時に背景色変更 */
+}
   
-.menu a:hover {
-    background: #374151; /* ホバー時に背景色変更 */
+/* .open クラスが付いたら表示 */
+.item.open .menu {
+    display: flex;
 }
 
-/* マウスカーソルが .item に乗った時だけメニューを表示する */
-.item:hover .menu {
-    display: block;
-}
-
+/* 中央寄せのテキスト */
 .center{
     text-align: center;
 }
 
 #name{
-    font-size: 40px;
-    color: black;
+    font-size: 50px;
+    color: #e5e7eb;
 }
