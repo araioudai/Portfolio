@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/open.js"></script>
-
+    
 </head>
 <body>
     <!-- ナビゲーション -->
     <nav>
         <div class="item">
-            <span class="trigger">Work</span>
-            <div class="menu">
-                <a href="#web">Web制作</a>
-                <a href="#ui">UIデザイン</a> 
-                <a href="#code">コード例</a>
-            </div>
-        </div>
-
-        <div class="item">
             <span class="trigger">About</span>
             <div class="menu">
-                <a href="#profile">プロフィール</a>
+                <a href="#profile">自己紹介</a>
+                <a href="#skill">スキル</a>
                 <a href="#contact">お問い合わせ</a>
+            </div>
+        </div>
+        
+        <div class="item">
+            <span class="trigger">Work</span>
+            <div class="menu">
+                <a href="#game">ゲーム作品</a>
+                <a href="#activity">活動</a> 
+                <a href="#code">コード例</a>
             </div>
         </div>
     </nav>
@@ -32,5 +32,8 @@
     <div class="center">
         <p id="name">新井 桜大</p>
     </div>
+
+    <!-- jsはHTMLの最後で読み込む -->
+    <script src="js/open.js"></script>
 </body>
 </html>
