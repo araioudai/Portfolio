@@ -16,3 +16,11 @@ items.forEach(item => {
 document.addEventListener('click', () => {
   items.forEach(i => i.classList.remove('open'));
 });
+
+//サブメニューのリンクを押したらメニューを閉じる
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    //すべてのメニューを閉じる
+    items.forEach(i => i.classList.remove('open'));
+  });
+});

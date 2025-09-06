@@ -4,13 +4,16 @@ body{
     background: #0f172a;              /* 背景色（濃いグレー） */
     color:#e5e7eb;                    /* 文字色（白） */
     margin: 0;                          /* ブラウザデフォルトの余白をリセット */
-    padding: 40px;                      /* 全体の余白 */
 }
 
 nav {
     display: flex;      /* 横並びレイアウト */
     gap: 40px;          /* 各項目の間隔 */
     flex-wrap: wrap;    /* 画面幅が狭い時は折り返す（モバイル対応） */
+}
+
+.container { 
+    padding: 40px; /* タイトル背景以外の余白用コンテナ */ 
 }
 
 /* メニュー項目 */
@@ -74,14 +77,14 @@ nav {
 .title{
     font-size: 50px;             /* 文字サイズ */
     background-color: #e5e7eb; /* 背景色 */
-    padding: 50px 0px;          /* 上下50px、左右はなしに、背景を広げる */
+    padding: 50px 0px;           /* 上下50px、左右はなしに、背景を広げる */
     width: 100%;                 /* 横幅を端まで */
     color: #0f172a;            /* 文字色 */
 }
 
 /* 本文 */
 .main{      
-    font-size: 20px; /* 文字サイズ */
+    font-size: 30px; /* 文字サイズ */
 }
 
 /* スクロールそスムーズに */
