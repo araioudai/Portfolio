@@ -72,9 +72,16 @@ nav {
 
 /* 各項目ごとのタイトル */
 .title{
-    font-size: 50px;
-    background-color: #e5e7eb;
-    color: #0f172a;
+    font-size: 50px;             /* 文字サイズ */
+    background-color: #e5e7eb; /* 背景色 */
+    padding: 50px 0px;          /* 上下50px、左右はなしに、背景を広げる */
+    width: 100%;                 /* 横幅を端まで */
+    color: #0f172a;            /* 文字色 */
+}
+
+/* 本文 */
+.main{      
+    font-size: 20px; /* 文字サイズ */
 }
 
 /* スクロールそスムーズに */
