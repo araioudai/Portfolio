@@ -77,7 +77,8 @@ nav {
 .title{
     font-size: 50px;             /* 文字サイズ */
     background-color: #e5e7eb; /* 背景色 */
-    padding: 50px 40px;          /* 左右にも余白を追加 */
+    padding: 25px 40px;          /* 左右にも余白を追加 */
+    text-align: center;          /* 文字を中心に */
     width: 100%;                 /* 横幅を端まで */
     color: #0f172a;            /* 文字色 */
 }
@@ -100,4 +101,24 @@ html {
 #name{
     font-size: 50px;
     color: #e5e7eb;
+}
+
+/* タブレット向け（768px～1023px） */
+@media screen and (min-width:768px) {
+    /* 各項目ごとのタイトル */
+    .title{
+        font-size: 50px;             /* 文字サイズ */
+        background-color: #e5e7eb; /* 背景色 */
+        padding: 50px 40px;          /* 左右にも余白を追加 */
+        text-align: center;          /* 文字を中心に */
+        width: 100%;                 /* 横幅を端まで */
+        color: #0f172a;            /* 文字色 */
+    }
+}
+
+/* PC向け（1024px～） */
+@media screen and (min-width:1024px) {
+    .title{
+        padding: 50px 40px;          /* 左右にも余白を追加 */
+    }
 }
