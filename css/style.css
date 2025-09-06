@@ -1,45 +1,55 @@
-.tooltip {
-    position: relative;
-    cursor: help;
-    border-bottom: 1px dashed #999; /* optional */
+body{
+    font-family: system-ui, sans-serif; /* フォント設定 */
+    background: #0f172a; /* 背景色（濃いグレー） */
+    color:#e5e7eb; /* 文字色（白） */
+    margin: 0; /* ブラウザデフォルトの余白をリセット */
+    padding: 40px; /* 全体の余白 */
 }
 
-/* 疑似要素で吹き出しを作る */
-.tooltip::after {
-    content: attr(data-tip);
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 8px);
-    transform: translateX(-50%);
-    background: #111;
-    color: #fff;
-    padding: 6px 8px;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .15s, transform .15s;
-    box-shadow: 0 6px 16px rgba(0,0,0,.2);
-    font-size: 12px;
+.item {
+    position: relative; /* 絶対配置するサブメニューの基準点にする */
+    display: inline-block; /* 横並びに配置 */
+    margin-right: 40px;    /* 項目間の余白 */
 }
 
-.tooltip::before {
-    /* 吹き出しの三角 */
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-top-color: #111;
-    opacity: 0;
-    transition: opacity .15s;
+.trigger {
+    padding: 8px 12px;      /* クリック領域を広げるための余白 */
+    cursor: pointer;        /* マウスカーソルをポインタに変更 */
+    border-radius: 8px;     /* 角を丸める */
+    transition: background .2s; /* ホバー時の背景色変化をスムーズに */
 }
-.tooltip:hover::after,
-.tooltip:hover::before,
-.tooltip:focus-visible::after,
-.tooltip:focus-visible::before {
-    opacity: 1;
+
+.trigger:hover {
+    background: #1f2937; /* ホバー時に背景色を暗めに変更 */
+}
+
+.menu {
+    position: absolute;   /* 親要素（.item）を基準に絶対配置 */
+    top: 100%;            /* trigger のすぐ下に表示 */
+    left: 0;              /* 左端をそろえる */
+    min-width: 200px;     /* メニューの最低幅 */
+    background: #111827;  /* 背景色（濃いグレー） */
+    border-radius: 10px;  /* 角丸 */
+    box-shadow: 0 8px 20px rgba(0,0,0,.3); /* ドロップシャドウ */
+    padding: 10px;        /* 内側余白 */
+    display: none;        /* 初期状態では非表示 */
+}
+
+.menu a {
+    display: block;        /* リンクをブロック要素化 → 全体クリック可能に */
+    padding: 8px 10px;     /* 項目の余白 */
+    border-radius: 6px;    /* リンクも角丸 */
+    color: #e5e7eb;        /* リンク文字色 */
+    text-decoration: none; /* 下線を消す */
+}
+  
+.menu a:hover {
+    background: #374151; /* ホバー時に背景色変更 */
+}
+
+/* マウスカーソルが .item に乗った時だけメニューを表示する */
+.item:hover .menu {
+    display: block;
 }
 
 .center{
