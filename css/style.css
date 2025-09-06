@@ -1,3 +1,52 @@
+.tooltip {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dashed #999; /* optional */
+}
+
+/* 疑似要素で吹き出しを作る */
+.tooltip::after {
+    content: attr(data-tip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+    background: #111;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s, transform .15s;
+    box-shadow: 0 6px 16px rgba(0,0,0,.2);
+    font-size: 12px;
+}
+
+.tooltip::before {
+    /* 吹き出しの三角 */
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #111;
+    opacity: 0;
+    transition: opacity .15s;
+}
+.tooltip:hover::after,
+.tooltip:hover::before,
+.tooltip:focus-visible::after,
+.tooltip:focus-visible::before {
+    opacity: 1;
+}
+
 .center{
     text-align: center;
+}
+
+#name{
+    font-size: 40px;
+    color: black;
 }
