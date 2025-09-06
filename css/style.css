@@ -64,8 +64,10 @@ nav {
    .item.open（クリックで開いた時）
    .item.hover（PC用） */
 .item.open .menu,
-.item:hover .menu{
+.item:hover .menu {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 中央寄せのテキスト */
