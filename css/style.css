@@ -77,7 +77,7 @@ nav {
 .title{
     font-size: 50px;             /* 文字サイズ */
     background-color: #e5e7eb; /* 背景色 */
-    padding: 50px 0px;           /* 上下50px、左右はなしに、背景を広げる */
+    padding: 50px 40px;          /* 左右にも余白を追加 */
     width: 100%;                 /* 横幅を端まで */
     color: #0f172a;            /* 文字色 */
 }
