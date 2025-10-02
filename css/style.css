@@ -91,9 +91,61 @@ nav {
     color: #0f172a;            /* 文字色 */
 }
 
+/* 自分の写真 */
+.main img {
+    max-width: 80%; /* 親要素の幅の80% */
+    height: auto;   /* アスペクト比を保つ */
+    margin: 0 auto; /* 左右オートで中央寄せ */
+    display: block; /* インラインからブロックに変更 */
+}
+
 /* 本文 */
 .main{      
     font-size: 30px; /* 文字サイズ */
+}
+
+/* profile- は、自己紹介調整 */
+
+.profileText {
+  font-size: 18px;  /* 全体の文字サイズを設定（読みやすい大きさ） */
+  line-height: 1.8; /* 行間を広めにして見やすくする */
+  max-width: 650px; /* 横幅を制限して読みやすい行長に */
+}
+
+.profileText h2 {
+  font-size: 28px;                    /* 名前を強調するため少し大きめ */
+  margin-bottom: 20px;                /* 名前と次の要素の間に余白を作る */
+  color: #e5e7eb;                   /* 明るい文字色で背景とコントラストをつける */
+  border-bottom: 2px solid #374151; /* 下線を入れて区切り感を出す */
+  padding-bottom: 5px;                /* 下線と文字の間に余白を確保 */
+}
+
+.profileSection {
+  margin-bottom: 30px; /* 各セクション同士の間に余白を入れて区切る */
+}
+
+.profileSection h3 {
+  font-size: 22px;                  /* セクション見出しを大きめに */
+  margin-bottom: 10px;              /* 見出しと内容の間に余白 */
+  color: #93c5fd;                 /* 少し青色でアクセントを付ける */
+  border-left: 4px solid #3b82f6; /* 左に青いラインを入れて見出しを強調 */
+  padding-left: 10px;               /* ラインと文字がくっつかないように余白 */
+}
+
+.profileSection ul {
+  margin: 10px 0 0 20px;      /* リスト全体の余白（特に左を少し深めに） */
+  padding: 0;                 /* デフォルトの余白をリセット */
+  display: grid;
+  grid-template-columns: 1fr; /* スマホは1列 */
+  gap: 6px 20px;              /* 行間・列間の余白 */
+}
+
+.profileSection li {
+  margin-bottom: 8px;     /* 各リスト項目の間に余白を入れて詰まらないようにする */
+}
+
+.gameTitle{
+    font-size: 40px;
 }
 
 /* スクロールそスムーズに */
@@ -117,6 +169,10 @@ html {
     .title{
         padding: 50px 5%; /* 左右にも余白を追加 */
     }
+    .profile-section ul {
+        /* グリッド（列）の幅をどうするか指定するプロパティ */
+        grid-template-columns: 1fr 1fr; /* タブレット以上で2列 */
+    }
 }
 
 /* PC向け（1024px～） */
@@ -124,5 +180,38 @@ html {
     /* 各項目ごとのタイトル */
     .title{
         padding: 50px 5%; /* 左右にも余白を追加 */
+    }
+
+    /* 自分の写真 */
+    img {
+        max-width: 100%; /* 親要素の幅の100% */
+        height: auto;    /* アスペクト比を保つ */
+        margin: 0;       /* 左寄せに戻す */
+    }
+
+     /* 自己紹介エリアを横並びにする */
+    .main {
+        display: flex;           /* 横並びレイアウト */
+        flex-direction: row;     /* 横並び */
+        align-items: flex-start; /* 上端を揃える */
+        gap: 80px;               /* テキストと画像の間隔 */
+    }
+
+    /* 写真 */
+    .main img {
+        max-width: 400px;  /* 写真の最大幅を調整 */
+        height: auto;      /* アスペクト比を保つ */
+        margin: 0;         /* 左寄せ */
+        flex-shrink: 0;    /* 小さく潰れないように固定 */
+    }
+
+    /* テキスト */
+    .main p {
+        flex: 1;   /* 余ったスペースを使う */
+        margin: 0; /* 左寄せ */     
+    }
+
+    .profile-section ul {
+        grid-template-columns: 1fr 1fr; /* タブレット以上で2列 */
     }
 }
