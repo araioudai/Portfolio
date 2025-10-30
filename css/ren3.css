@@ -1,12 +1,11 @@
-/* ゲーム作品の各紹介の後に空白を追加（重なり防止） */
-#slide, #bomb, #future, #switch, #xevious {
-    background: #1e293b;
-    padding: 40px;
-    border-radius: 15px;
-    margin-bottom: 120px; /* 空白をさらに増やす（100pxから120pxに変更） */
-    padding-bottom: 100px; /* 内部にもスペースを追加（40pxから100pxに変更） */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border: 1px solid #374151;
+/* PCなどの横画面で横並びの場合の調整 */
+@media (min-width: 768px) {
+    .video-and-table iframe {
+        flex: 1; /* 動画を柔軟に広げる */
+        max-width: 50%; /* 最大50%幅 */
+        height: auto; /* アスペクト比を維持するためにautoに変更 */
+        aspect-ratio: 9 / 16; /* 9:16のアスペクト比を明示的に指定 */
+    }
 }
 
 /* すべての要素で box-sizing を統一 */
@@ -278,6 +277,16 @@ section {
     margin-bottom: 30px;
 }
 
+
+/* 動画埋め込みのサイズを9:16（ショート動画用）に変更 */
+iframe {
+    width: 100%;
+    max-width: 315px; /* 9:16の幅に調整（16:9の560pxから315pxに変更） */
+    height: 560px; /* 9:16の高さに調整（16:9の315pxから560pxに変更） */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* 動画と表のコンテナ（デフォルトは縦並び） */
 .video-and-table {
     display: flex;
@@ -294,12 +303,6 @@ section {
         align-items: flex-start; /* 上揃えでバランス良く */
     }
     
-    /* 動画の幅調整 */
-    .video-and-table iframe {
-        flex: 1; /* 動画を柔軟に広げる */
-        max-width: 50%; /* 最大50%幅 */
-    }
-    
     /* 表の幅調整 */
     .video-and-table .main {
         flex: 1; /* 表を柔軟に広げる */
@@ -307,12 +310,15 @@ section {
     }
 }
 
-iframe {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+/* ゲーム作品の各紹介の後に空白を追加（重なり防止） */
+#slide, #bomb, #future, #switch, #xevious {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 120px; /* 空白をさらに増やす（100pxから120pxに変更） */
+    padding-bottom: 100px; /* 内部にもスペースを追加（40pxから100pxに変更） */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #374151;
 }
 
 table {
