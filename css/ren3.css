@@ -1,0 +1,387 @@
+/* ゲーム作品の各紹介の後に空白を追加（重なり防止） */
+#slide, #bomb, #future, #switch, #xevious {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 120px; /* 空白をさらに増やす（100pxから120pxに変更） */
+    padding-bottom: 100px; /* 内部にもスペースを追加（40pxから100pxに変更） */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #374151;
+}
+
+/* すべての要素で box-sizing を統一 */
+* {
+    box-sizing: border-box;
+}
+
+/* 全体の基本スタイル */
+body {
+    font-family: 'Roboto', sans-serif; /* モダンで読みやすいフォントに変更 */
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* グラデーション背景で深みを追加 */
+    color: #e5e7eb; /* 文字色（白系） */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* スムーズスクロール */
+}
+
+/* 固定ヘッダーのスタイル */
+#fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95); /* 半透明でモダンに */
+    backdrop-filter: blur(10px); /* ぼかし効果でプロフェッショナル */
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #374151;
+}
+
+/* bodyにpadding-topを追加して、ヘッダーの高さ分コンテンツを下げる */
+body {
+    padding-top: 80px; /* ヘッダーの高さを80pxに調整（より余裕を持たせる） */
+}
+
+/* ナビゲーション */
+nav {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center; /* 中央寄せでバランス良く */
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* メニュー項目 */
+.item {
+    position: relative;
+}
+
+/* メニューを開くためのボタン */
+.trigger {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 1px solid #3b82f6; /* 青のボーダーアクセント */
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: 500;
+}
+.trigger:hover, .trigger:focus {
+    background: #3b82f6; /* 青のホバーでアクティブ感 */
+    color: #ffffff;
+    transform: translateY(-2px); /* 軽いアニメーション */
+}
+
+/* サブメニュー */
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #1e293b;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    border: 1px solid #374151;
+}
+
+/* サブメニュー内のリンク */
+.menu a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #e5e7eb;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.menu a:hover, .menu a:focus {
+    background: #3b82f6;
+}
+
+/* サブメニューを表示する条件 */
+.item.open .menu,
+.item:hover .menu {
+    display: flex;
+}
+
+/* 中央の名前部分 */
+.center {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#name {
+    font-size: 48px;
+    font-weight: 700;
+    color: #3b82f6; /* 青アクセント */
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(59, 130, 246, 0.5);
+}
+
+/* 各セクション */
+section {
+    margin-bottom: 80px;
+    scroll-margin-top: 80px; /* ヘッダー高さに合わせて調整 */
+}
+
+/* 各項目ごとのタイトル */
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); /* 青グラデーション */
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 自己紹介セクション（PCで横並び） */
+#profile .main {
+    display: flex;
+    flex-direction: column; /* モバイルでは縦並び */
+    align-items: center;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    #profile .main {
+        flex-direction: row; /* PCで横並び */
+        align-items: flex-start; /* 上揃えでバランス良く */
+        gap: 40px;
+    }
+    
+    #myFace {
+        flex: 1; /* 画像を柔軟に広げる */
+        max-width: 40%; /* 幅を40%に制限 */
+    }
+    
+    .profileText {
+        flex: 1; /* テキストを柔軟に広げる */
+        max-width: 60%; /* 幅を60%に制限 */
+    }
+}
+
+#myFace {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid #3b82f6;
+}
+
+.profileText {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #374151;
+    max-width: 700px;
+    width: 100%;
+}
+
+.profileText h2 {
+    font-size: 32px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 10px;
+}
+
+.profileSection {
+    margin-bottom: 30px;
+}
+
+.profileSection h3 {
+    font-size: 24px;
+    color: #10b981; /* 緑アクセントで成長感 */
+    margin-bottom: 15px;
+    border-left: 5px solid #10b981;
+    padding-left: 15px;
+}
+
+.profileSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profileSection li {
+    padding: 5px 0;
+    color: #d1d5db;
+}
+
+/* スキルセクション */
+#skill .main {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid #374151;
+}
+
+/* ゲーム作品一覧 */
+#game .main ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#game .main li {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid #374151;
+}
+
+#game .main a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#game .main a:hover {
+    text-decoration: underline;
+}
+
+#subTitle {
+    font-size: 28px;
+    color: #10b981;
+    margin-bottom: 20px;
+}
+
+#explanation {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* 動画と表のコンテナ（デフォルトは縦並び） */
+.video-and-table {
+    display: flex;
+    flex-direction: column; /* モバイルでは縦並び */
+    gap: 30px;
+    align-items: center;
+}
+
+/* PCなどの横画面で横並びに変更 */
+@media (min-width: 768px) {
+    .video-and-table {
+        flex-direction: row; /* 横並び */
+        gap: 40px; /* 間隔を広めに */
+        align-items: flex-start; /* 上揃えでバランス良く */
+    }
+    
+    /* 動画の幅調整 */
+    .video-and-table iframe {
+        flex: 1; /* 動画を柔軟に広げる */
+        max-width: 50%; /* 最大50%幅 */
+    }
+    
+    /* 表の幅調整 */
+    .video-and-table .main {
+        flex: 1; /* 表を柔軟に広げる */
+        max-width: 50%; /* 最大50%幅 */
+    }
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    background: #334155;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #475569;
+}
+
+th {
+    background: #3b82f6;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+td {
+    color: #e5e7eb;
+}
+
+/* コード例 */
+#code .container {
+    text-align: center;
+}
+
+#codePic {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid #10b981;
+}
+
+/* 活動とお問い合わせ */
+#activity .main, #contact .main {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid #374151;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    #name {
+        font-size: 36px;
+    }
+    .profileText {
+        padding: 20px;
+    }
+    .video-and-table {
+        flex-direction: column;
+    }
+    table {
+        font-size: 14px;
+    }
+}

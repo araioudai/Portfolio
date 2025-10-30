@@ -1,0 +1,174 @@
+/* 既存のCSSに追加・修正 */
+
+/* 固定ヘッダーのスタイル */
+#fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0f172a; /* 背景色をbodyと同じに */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* 影を付けて浮かせる */
+}
+
+/* bodyにpadding-topを追加して、ヘッダーの高さ分コンテンツを下げる */
+body {
+    padding-top: 60px; /* ヘッダーの高さに合わせて調整（必要に応じて変更） */
+    scroll-behavior: smooth; /* スムーズスクロールを追加 */
+}
+
+/* 各セクションのスクロール位置を調整（ヘッダーの高さ分オフセット） */
+section {
+    scroll-margin-top: 60px; /* ヘッダーの高さ（60px）に合わせて調整 */
+    padding-top: 60px; /* セクションの内容を下に60pxずらす（追加） */
+}
+
+/* 各項目ごとのタイトル */
+.title{
+    font-size: 40px;             /* 文字サイズ */
+    background-color: #e5e7eb; /* 背景色 */
+    padding: 25px 5%;            /* 左右にも余白を追加 */
+    text-align: center;          /* 文字を中心に */
+    width: 100%;                 /* 横幅を端まで */
+    color: #0f172a;            /* 文字色 */
+    /* margin-top: 60px; を削除 */
+}
+
+/* 以下は既存のCSSをそのまま残す */
+
+/* すべての要素で box-sizing を統一 */
+* {
+    box-sizing: border-box;
+}
+
+/* 全体の基本スタイル */
+body{
+    font-family: system-ui, sans-serif; /* フォント設定 */
+    background: #0f172a;              /* 背景色（濃いグレー） */
+    color:#e5e7eb;                    /* 文字色（白） */
+    margin: 0;                          /* ブラウザデフォルトの余白をリセット */
+    overflow-x: hidden;                 /* 横スクロール禁止 */
+}
+
+nav {
+    display: flex;      /* 横並びレイアウト */
+    gap: 40px;          /* 各項目の間隔 */
+    flex-wrap: wrap;    /* 画面幅が狭い時は折り返す（モバイル対応） */
+}
+
+.container { 
+    padding: 40px 5%;  /* 画面幅に応じて余白を確保 */
+    max-width: 1200px; /* 横に広がりすぎないよう制限 */
+    margin: 0 auto;    /* 中央寄せ */
+}
+
+/* メニュー項目 */
+.item {
+    position: relative; /* サブメニューの基準点にする */
+}
+
+/* メニューを開くためのボタン */
+.trigger {
+    padding: 8px 12px;          /* ボタンの余白 */
+    cursor: pointer;            /* マウスをポインタに変更 */
+    border-radius: 8px;         /* 角丸 */
+    transition: background .2s; /* 背景色変化をスムーズに */
+    background: transparent;    /* デフォルト背景なし */
+    border: none;               /* 枠線を消す */
+    color: inherit;             /* 親要素の文字色を継承 */
+    font-size: 18px;            /* 文字サイズ */
+}
+.trigger:hover, .trigger:focus {
+    background: #1f2937; /* ホバー or フォーカスで背景色を暗めに */
+}
+
+/* サブメニュー */
+.menu {
+    position: absolute;       /* .item を基準に絶対配置 */
+    top: 100%;                /* trigger の直下に配置 */
+    left: 0;                  /* 左端を揃える */
+    min-width: 200px;         /* 幅の最低値 */
+    background: #111827;    /* 背景色（さらに濃いグレー） */
+    border-radius: 10px;      /* 角丸 */
+    box-shadow: 0 8px 20px rgba(0,0,0,.3); /* 影を付けて浮かせる */
+    padding: 10px;            /* 内側余白 */
+    display: none;            /* 初期状態では非表示 */
+    flex-direction: column;   /* 子要素を縦並びに */
+    z-index: 10;              /* 他の要素より前に表示 */
+}
+
+/* サブメニュー内のリンク */
+.menu a {
+    display: block;        /* ブロック要素化 → 全体クリック可能 */
+    padding: 8px 10px;     /* 項目の余白 */
+    border-radius: 6px;    /* 角丸 */
+    color: #e5e7eb;      /* 文字色 */
+    text-decoration: none; /* 下線を消す */
+}
+.menu a:hover, .menu a:focus {
+    background: #374151;   /* ホバー時に背景色変更 */
+}
+  
+/* サブメニューを表示する条件
+   .item.open（クリックで開いた時）
+   .item.hover（PC用） */
+.item.open .menu,
+.item:hover .menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 各項目ごとのサブタイトル */
+#subTitle{
+    font-size: 30px; /* 文字サイズ */
+}
+
+/* 自分の写真 */
+.main img {
+    max-width: 80%; /* 親要素の幅の80% */
+    height: auto;   /* アスペクト比を保つ */
+    margin: 0 auto; /* 左右オートで中央寄せ */
+    display: block; /* インラインからブロックに変更 */
+}
+
+/* コード説明写真 */
+#codePic{
+    max-width:100%; /* 親要素の幅の100% */
+    height: auto;   /* アスペクト比を保つ */
+    margin: 0 auto; /* 左右オートで中央寄せ */
+    display: block; /* インラインからブロックに変更 */
+}
+
+/* 本文 */
+.main{      
+    font-size: 30px; /* 文字サイズ */
+}
+
+/* profile- は、自己紹介調整 */
+
+.profileText {
+  font-size: 18px;  /* 全体の文字サイズを設定（読みやすい大きさ） */
+  line-height: 1.8; /* 行間を広めにして見やすくする */
+  max-width: 650px; /* 横幅を制限して読みやすい行長に */
+}
+
+.profileText h2 {
+  font-size: 28px;                    /* 名前を強調するため少し大きめ */
+  margin-bottom: 20px;                /* 名前と次の要素の間に余白を作る */
+  color: #e5e7eb;                   /* 明るい文字色で背景とコントラストをつける */
+  border-bottom: 2px solid #374151; /* 下線を入れて区切り感を出す */
+  padding-bottom: 5px;                /* 下線と文字の間に余白を確保 */
+}
+
+.profileSection {
+  margin-bottom: 30px; /* 各セクション同士の間に余白を入れて区切る */
+}
+
+.profileSection h3 {
+  font-size: 22px;                  /* セクション見出しを大きめに */
+  margin-bottom: 10px;              /* 見出しと内容の間に余白 */
+  color: #93c5fd;                 /* 少し青色でアクセントを付ける */
+  border-left: 4px solid #3b82f6; /* 左に青いラインを入れて見出しを強調 */
+  padding-left: 10px;               /* ラインと文字がくっつかないように*/
+}

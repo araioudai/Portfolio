@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/ren3.css">
+    
+</head>
+<body>
+    <!-- ナビゲーションを固定ヘッダーに変更 -->
+    <header id="fixed-header">
+        <div class="container">
+            <nav>
+                <div class="item">
+                    <button class="trigger">About</button>
+                    <div class="menu">
+                        <a href="#profile">自己紹介</a>
+                        <a href="#skill">スキル</a>
+                        <a href="#contact">お問い合わせ</a>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <button class="trigger">Work</button>
+                    <div class="menu">
+                        <a href="#game">ゲーム作品</a>
+                        <a href="#activity">活動</a> 
+                        <a href="#code">コード例</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="center">
+        <p id="name">新井 桜大<br>ポートフォリオ</p>
+    </div>
+
+    <!-- section は、ページを意味的に分けるブロック要素 -->
+    <section id="profile">
+        <div class="title">
+            <strong>自己紹介</strong>
+        </div>
+        <div class="container">
+            <div class="main">
+                <img id="myFace" src="img/ポートフォリオ新井桜大.png" alt="写真" width="420" height="560">
+                <div class="profileText">
+                    <div class="profileText">
+                        <h2>新井 桜大</h2>
+
+                        <div class="profileSection">
+                            <p><strong>学校：</strong> 横浜デジタルアーツ専門学校　ゲーム科</p>
+                            <p><strong>目標：</strong> ゲーム業界・IT業界で活躍できるプログラマーを目指しています。</p>
+                        </div>
+
+                        <div class="profileSection">
+                            <h3>資格</h3>
+                            <ul>
+                                <li>情報技術検定 3級</li>
+                                <li>CGクリエイター検定 ベーシック</li>
+                                <li>第一種普通自動車免許</li>
+                            </ul>
+                        </div>
+
+                        <div class="profileSection">
+                            <h3>趣味・興味</h3>
+                            <ul>
+                                <li>サッカー</li>
+                                <li>ゲーム</li>
+                                <li>筋トレ</li>
+                                <li>水泳</li>
+                            </ul>
+                        </div>
+
+                        <div class="profileSection">
+                            <h3>好きなゲーム</h3>
+                            <ul>
+                                <li>REMATCH、eFootball</li>
+                                <li>フォートナイト、VALORANT</li>
+                                <li>ブルーロック BLAZE BATTLE</li>
+                                <li>ブルーロックPWC</li>
+                                <li>NBA 2K Mobile、MLB PRO SPIRIT</li>
+                                <li>ブロスタ、OnePieceバウンティラッシュ</li>
+                                <li>Clash of Clans、Clash Royale</li>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skill">
+        <div class="title">
+            <strong>スキル</strong>
+        </div>
+        <div class="container">
+            <div class="main">
+                <p>スキルを書く場所です</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="game">
+        <div class="title">
+            <strong>ゲーム作品一覧</strong>
+        </div>
+        <div class="container">
+            <div class="main">
+                <ol>
+                    <li type="1"><a href="#slide">SlideDungeon</a></li>
+                    <li type="1"><a href="#bomb">爆弾職人</a></li>
+                    <li type="1"><a href="#future">目指そう明るい未来</a></li>
+                    <li type="1"><a href="#switch">TwilightSwitch</a></li>
+                    <li type="1"><a href="#xevious">XEVIOUS(ゼビウス)</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <section id="slide">
+            <div class="title">
+                <strong>SlideDungeon</strong>
+            </div>
+        </section>
+        <div class="container">
+            <p id="subTitle">作品概要</p>
+            <p id="explanation">
+                モバイル向けの<span style="color:red;">2Dパズルカジュアルゲーム</span>です。<br>
+                <span style="color:red;">タップとスワイプ操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
+                幕張メッセにて行われた、<span style="color:red;">東京ゲームショウ2025に展示したゲーム</span>です。
+            </p>
+
+            <div class="video-and-table">
+                <iframe src="https://www.youtube-nocookie.com/embed/TOSUiWsB1Ec" title="作品実演動画（SlideDungeon）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="main">
+                    <table border="1">
+                        <tr>
+                            <th></th>
+                            <th>内容</th>
+                        </tr>
+                        <tr>
+                            <th>プラットフォーム</th>
+                            <td>Android、iPhone</td>
+                        </tr>
+                        <tr>
+                            <th>言語</th>
+                            <td>C#</td>
+                        </tr>
+                        <tr>
+                            <th>開発環境</th>
+                            <td>Unity 2022.3.50f1</td>
+                        </tr>
+                        <tr>
+                            <th>開発期間</th>
+                            <td>2025/09～2025/10</td>
+                        </tr>
+                        <tr>
+                            <th>制作時間</th>
+                            <td>約80時間</td>
+                        </tr>
+                        <tr>
+                            <th>制作人数</th>
+                            <td>1人</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+        <section id="bomb">
+            <div class="title">
+                <strong>爆弾職人Polka</strong>
+            </div>
+        </section>
+        <div class="container">
+            <p id="subTitle">作品概要</p>
+            <p id="explanation">
+                全機種対応の<span style="color:red;">2Dアクションゲーム</span>です。<br>
+                マップ内の敵を<span style="color:red;">すべて倒す</span>ことで<span style="color:red;">ゲームクリア</span>することができます。<br>
+                説明追加
+            </p>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <th>プラットフォーム</th>
+                    <td>Android、PC</td>
+                </tr>
+                <tr>
+                    <th>言語</th>
+                    <td>C#</td>
+                </tr>
+                <tr>
+                    <th>開発環境</th>
+                    <td>Unity 2022.3.22f1</td>
+                </tr>
+                <tr>
+                    <th>開発期間</th>
+                    <td>2025/～2025/</td>
+                </tr>
+                <tr>
+                    <th>制作時間</th>
+                    <td>時間</td>
+                </tr>
+                <tr>
+                    <th>制作人数</th>
+                    <td>3人</td>
+                </tr>
+            </table>
+        </div>
+
+        <section id="future">
+            <div class="title">
+                <strong>目指そう明るい未来</strong>
+            </div>
+        </section>
+        <div class="container">
+            <p id="subTitle">作品概要</p>
+            <p id="explanation">
+                PC向けの<span style="color:red;">2Dシュミレーションゲーム</span>です。<br>
+                操作方法はシンプルで<span style="color:red;">クリック（タップ）操作のみ</span>となります。「さく」というテーマを元に<br>
+                ゲームジャムイベントにて制作しました。<br>
+                イベント内の投票の結果、12チーム中<span style="color:red;">プレゼン、ゲーム内容の両ジャンルとも3位</span>を<br>
+                獲得しました。
+            </p>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <th>プラットフォーム</th>
+                    <td>PC</td>
+                </tr>
+                <tr>
+                    <th>言語</th>
+                    <td>C#</td>
+                </tr>
+                <tr>
+                    <th>開発環境</th>
+                    <td>Unity 2022.3.22f1</td>
+                </tr>
+                <tr>
+                    <th>開発期間</th>
+                    <td>2025/4/8～2025/4/10</td>
+                </tr>
+                <tr>
+                    <th>制作時間</th>
+                    <td>約30時間</td>
+                </tr>
+                <tr>
+                    <th>制作人数</th>
+                    <td>4人</td>
+                </tr>
+            </table>
+        </div>
+
+        <section id="switch">
+            <div class="title">
+                <strong>TwilightSwitch</strong>
+            </div>
+        </section>
+        <div class="container">
+            説明
+        </div>
+
+        <section id="xevious">
+            <div class="title">
+                <strong>XEVIOUS(ゼビウス)</strong>
+            </div>
+        </section>
+        <div class="container">
+            説明
+        </div>
+
+    </section>
+
+    <section id="code">
+        <div class="title">
+            <strong>コード例</strong>
+        </div>
+        <div class="container">
+            <img id="codePic" src="img/Manager.png" width="910" height="620">    
+        </div>
+    </section>
+
+    <section id="activity">
+        <div class="title">
+            <strong>活動</strong>
+        </div>
+        <div class="container">
+            <div class="main">
+                <p>活動を書く場所です</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="title">
+            <strong>お問い合わせ</strong>
+        </div>
+        <div class="container">
+            <div class="main">
+                <p>お問い合わせを書く場所です</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- jsはHTMLの最後で読み込む -->
+    <script src="js/open.js"></script>
+</body>
+</html>
