@@ -83,7 +83,7 @@ nav {
 
 /* 各項目ごとのタイトル */
 .title{
-    font-size: 50px;             /* 文字サイズ */
+    font-size: 40px;             /* 文字サイズ */
     background-color: #e5e7eb; /* 背景色 */
     padding: 25px 5%;            /* 左右にも余白を追加 */
     text-align: center;          /* 文字を中心に */
@@ -91,9 +91,22 @@ nav {
     color: #0f172a;            /* 文字色 */
 }
 
+/* 各項目ごとのサブタイトル */
+#subTitle{
+    font-size: 30px; /* 文字サイズ */
+}
+
 /* 自分の写真 */
 .main img {
     max-width: 80%; /* 親要素の幅の80% */
+    height: auto;   /* アスペクト比を保つ */
+    margin: 0 auto; /* 左右オートで中央寄せ */
+    display: block; /* インラインからブロックに変更 */
+}
+
+/* コード説明写真 */
+#codePic{
+    max-width:100%; /* 親要素の幅の100% */
     height: auto;   /* アスペクト比を保つ */
     margin: 0 auto; /* 左右オートで中央寄せ */
     display: block; /* インラインからブロックに変更 */
@@ -163,15 +176,82 @@ html {
     color: #e5e7eb;
 }
 
+/* テーブルの書式設定 */
+table{
+    border-color:#e5e7eb;
+}
+
+/* スマホ：縦並び（デフォルト） */
+.video-and-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.video-and-table iframe {
+    width: 90%;
+    max-width: 360px;
+    aspect-ratio: 9 / 16; /* Shorts縦動画 */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-and-table table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+}
+
+
 /* タブレット向け（768px～1023px） */
 @media screen and (min-width:768px) {
     /* 各項目ごとのタイトル */
     .title{
+        font-size: 60px;  /* 文字サイズ */
         padding: 50px 5%; /* 左右にも余白を追加 */
     }
-    .profile-section ul {
+
+    /* 各項目ごとのサブタイトル */
+    #subTitle{
+        font-size: 30px; /* 文字サイズ */
+    }
+
+    /* 説明（小さい字） */
+    #explanation{
+        font-size: 20px; /* 文字サイズ */
+    }
+
+    .profileSection ul {
         /* グリッド（列）の幅をどうするか指定するプロパティ */
         grid-template-columns: 1fr 1fr; /* タブレット以上で2列 */
+    }
+
+    /* タブレット以上（768px～）：横並びにする */
+    /* 動画の隣にテーブルを置く */
+    .video-and-table {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between; /* 左右いっぱいに配置 */
+        gap: 10px;
+    }
+
+    .video-and-table iframe {
+        flex: 0 0 50%;      /* 動画を細めに固定 */
+        height: 520px;
+    }
+
+    .video-and-table table {
+        flex: 1;
+        max-width: none;     /* 横制限を外す（広く使える） */
+        font-size: 18px;
+        white-space: nowrap; /* 1行で完結させる */
+    }
+
+    .video-and-table table th,
+    .video-and-table table td {
+        padding: 8px 12px;
     }
 }
 
@@ -179,17 +259,27 @@ html {
 @media screen and (min-width:1024px) {
     /* 各項目ごとのタイトル */
     .title{
+        font-size: 70px;  /* 文字サイズ */
         padding: 50px 5%; /* 左右にも余白を追加 */
     }
 
+    /* 各項目ごとのサブタイトル */
+    #subTitle{
+        font-size: 40px; /* 文字サイズ */
+    }
+
+    #explanation{
+        font-size: 30px; /* 文字サイズ */
+    }
+
     /* 自分の写真 */
-    img {
+    #myFace img {
         max-width: 100%; /* 親要素の幅の100% */
         height: auto;    /* アスペクト比を保つ */
         margin: 0;       /* 左寄せに戻す */
     }
 
-     /* 自己紹介エリアを横並びにする */
+    /* 自己紹介エリアを横並びにする */
     .main {
         display: flex;           /* 横並びレイアウト */
         flex-direction: row;     /* 横並び */
@@ -211,7 +301,26 @@ html {
         margin: 0; /* 左寄せ */     
     }
 
-    .profile-section ul {
+    /* コード説明写真 */
+    #codePic{
+        max-width:80%; /* 親要素の幅の80% */
+    }
+
+    .profileSection ul {
         grid-template-columns: 1fr 1fr; /* タブレット以上で2列 */
+    }
+
+    /* 動画の隣にテーブルを置く */
+    .video-and-table {
+        gap: 17px;
+    }
+
+    .video-and-table iframe {
+        flex: 0 0 50%;
+        height: 560px;
+    }
+
+    .video-and-table table {
+        font-size: 20px;
     }
 }

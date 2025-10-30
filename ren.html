@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .card {
+      display: inline-block;
+      width: 150px;
+      margin: 10px;
+      padding: 20px;
+      background: #f0f0f0;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+    .card:hover {
+      background: #e0e0e0;
+    }
+
+    /* モーダルの基本 */
+    .modal {
+      display: none; /* デフォルトは非表示 */
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 80%;
+      text-align: center;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 10px; right: 15px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Portfolio</h1>
+
+  <!-- カード一覧 -->
+  <div class="card" data-modal="modal1">作品1</div>
+  <div class="card" data-modal="modal2">作品2</div>
+  <div class="card" data-modal="modal3">作品3</div>
+
+  <!-- モーダル -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>作品1の詳細</h2>
+      <p>これは作品1の説明です。</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>作品2の詳細</h2>
+      <p>これは作品2の説明です。</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>作品3の詳細</h2>
+      <p>これは作品3の説明です。</p>
+    </div>
+  </div>
+
+  <script>
+    // カードをクリックでモーダル表示
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const modalId = card.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'flex';
+      });
+    });
+
+    // 閉じるボタンで非表示
+    document.querySelectorAll('.close').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal').style.display = 'none';
+      });
+    });
+
+    // モーダル外をクリックしたら閉じる
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    });
+  </script>
+
+<video controls>
+  <source src="myVideo.webm" type="video/webm" />
+  <source src="myVideo.mp4" type="video/mp4" />
+  <p>
+    このブラウザーは HTML の動画に対応していません。代わりに<a href="myVideo.mp4" download="myVideo.mp4">動画へのリンク</a>があります。
+  </p>
+</video>
+
+</body>
+</html>
