@@ -400,8 +400,8 @@ section {
 /* 動画埋め込みのサイズを9:16（ショート動画用）に変更 */
 .video-and-table-vertical iframe {
     width: 100%;
-    max-width: 315px; /* 9:16の幅に調整（16:9の560pxから315pxに変更） */
-    height: 560px; /* 9:16の高さに調整（16:9の315pxから560pxに変更） */
+    max-width: 236px; /* 9:16の幅に調整 */
+    height: 420px; /* 9:16の高さに調整 */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
