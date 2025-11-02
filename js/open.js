@@ -24,3 +24,52 @@ document.querySelectorAll('.menu a').forEach(link => {
     items.forEach(i => i.classList.remove('open'));
   });
 });
+
+// ゲームセクション全体のクリックイベント（どこをクリックしてもモーダルを開く）
+document.querySelectorAll('.game-section').forEach(section => {
+    section.addEventListener('click', (e) => {
+        // ボタンやリンクのクリックは無視（イベントバブリングを防ぐ）
+        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
+        
+        const game = section.getAttribute('data-game');
+        if (game) {
+            const detailId = `${game}-detail`;
+            const detailContent = document.getElementById(detailId).innerHTML;
+            
+            // モーダルに詳細を挿入
+            document.getElementById('modal-body').innerHTML = detailContent;
+            
+            // モーダルを表示
+            document.getElementById('game-modal').style.display = 'block';
+        }
+    });
+});
+
+// 既存のモーダルトリガー（説明文、タイトル、ボタン）のイベント
+document.querySelectorAll('.modal-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        const game = e.target.getAttribute('data-game') || e.target.closest('[data-game]').getAttribute('data-game');
+        if (game) {
+            const detailId = `${game}-detail`;
+            const detailContent = document.getElementById(detailId).innerHTML;
+            
+            // モーダルに詳細を挿入
+            document.getElementById('modal-body').innerHTML = detailContent;
+            
+            // モーダルを表示
+            document.getElementById('game-modal').style.display = 'block';
+        }
+    });
+});
+
+// モーダルを閉じるイベント
+document.querySelector('.close').addEventListener('click', () => {
+    document.getElementById('game-modal').style.display = 'none';
+});
+
+// モーダル外クリックで閉じる
+window.addEventListener('click', (e) => {
+    if (e.target === document.getElementById('game-modal')) {
+        document.getElementById('game-modal').style.display = 'none';
+    }
+});

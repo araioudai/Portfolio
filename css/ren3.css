@@ -277,9 +277,128 @@ section {
     margin-bottom: 30px;
 }
 
+/* モーダルのスタイル */
+.modal {
+    display: none; /* 初期状態で非表示 */
+    position: fixed;
+    z-index: 2000; /* ヘッダーより上に */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明背景 */
+    backdrop-filter: blur(5px); /* ぼかし効果 */
+}
+
+.modal-content {
+    background: #1e293b;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #374151;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #e5e7eb;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#modal-body {
+    padding: 20px 0;
+}
+
+/* タイトルをクリック可能にし、ホバー効果を追加 */
+.title[data-game] {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.title[data-game]:hover {
+    transform: translateY(-5px); /* 軽く浮かせる */
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); /* 影を強調 */
+}
+
+/* 説明文をクリック可能に（ホバー効果を削除） */
+.explanation {
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent; /* 初期は透明 */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ゲームセクション全体をクリック可能にし、ホバー効果を追加 */
+.game-section {
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent; /* 初期は透明 */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 120px;
+    background: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #374151;
+}
+.game-section:hover {
+    background-color: rgba(59, 130, 246, 0.05); /* 薄い青背景で全体をハイライト */
+    border-color: #3b82f6; /* 青ボーダー */
+}
+
+/* 詳細を見るボタンのスタイル */
+.detail-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); /* 青グラデーション */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    margin-top: 20px; /* 説明文の下にスペース */
+}
+.detail-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); /* 濃い青に変化 */
+    transform: translateY(-3px); /* 浮かせる */
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+}
+.detail-btn:active {
+    transform: translateY(0); /* クリック時に戻す */
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+
+    /* モバイル対応でボタンをタッチしやすく */
+    .detail-btn {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}
 
 /* 動画埋め込みのサイズを9:16（ショート動画用）に変更 */
-iframe {
+.video-and-table-vertical iframe {
     width: 100%;
     max-width: 315px; /* 9:16の幅に調整（16:9の560pxから315pxに変更） */
     height: 560px; /* 9:16の高さに調整（16:9の315pxから560pxに変更） */
@@ -288,7 +407,24 @@ iframe {
 }
 
 /* 動画と表のコンテナ（デフォルトは縦並び） */
-.video-and-table {
+.video-and-table-vertical {
+    display: flex;
+    flex-direction: column; /* モバイルでは縦並び */
+    gap: 30px;
+    align-items: center;
+}
+
+/* 動画埋め込みのサイズを16:9（横動画用）に変更 */
+.video-and-table-beside iframe {
+    width: 100%;
+    max-width: 560px; /* 16:9の幅に調整（16:9の560px） */
+    height: 315px; /* 16:9の高さに調整（16:9の315px） */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 動画と表のコンテナ（デフォルトは縦並び） */
+.video-and-table-beside {
     display: flex;
     flex-direction: column; /* モバイルでは縦並び */
     gap: 30px;
@@ -297,14 +433,44 @@ iframe {
 
 /* PCなどの横画面で横並びに変更 */
 @media (min-width: 768px) {
-    .video-and-table {
+    .video-and-table-vertical {
         flex-direction: row; /* 横並び */
         gap: 40px; /* 間隔を広めに */
         align-items: flex-start; /* 上揃えでバランス良く */
     }
     
     /* 表の幅調整 */
-    .video-and-table .main {
+    .video-and-table-vertical .main {
+        flex: 1; /* 表を柔軟に広げる */
+        max-width: 50%; /* 最大50%幅 */
+    }
+
+    /* 縦動画を柔軟に広げる */
+    .video-and-table-vertical iframe {
+        flex: 1; /* 動画を柔軟に広げる */
+        max-width: 50%; /* 最大50%幅 */
+        height: auto; /* 高さを自動に */
+        aspect-ratio: 9 / 16; /* アスペクト比を維持 */
+    }
+    
+    /* 横動画を柔軟に広げる */
+    .video-and-table-beside iframe {
+        flex: 1; /* 動画を柔軟に広げる */
+        max-width: 50%; /* 最大50%幅 */
+        height: auto; /* 高さを自動に */
+        aspect-ratio: 16 / 9; /* アスペクト比を維持 */
+    }
+}
+
+@media (min-width: 980px) {
+    .video-and-table-beside {
+        flex-direction: row; /* 横並び */
+        gap: 40px; /* 間隔を広めに */
+        align-items: flex-start; /* 上揃えでバランス良く */
+    }
+    
+    /* 表の幅調整 */
+    .video-and-table-beside .main {
         flex: 1; /* 表を柔軟に広げる */
         max-width: 50%; /* 最大50%幅 */
     }
@@ -372,8 +538,8 @@ td {
 /* モバイル対応 */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
         gap: 20px;
+        flex-wrap: nowrap; /* メニュー項目を1段で横並びに */
     }
     .title {
         font-size: 28px;
