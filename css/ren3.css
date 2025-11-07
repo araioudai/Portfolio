@@ -1,13 +1,3 @@
-/* PCなどの横画面で横並びの場合の調整 */
-@media (min-width: 768px) {
-    .video-and-table iframe {
-        flex: 1; /* 動画を柔軟に広げる */
-        max-width: 50%; /* 最大50%幅 */
-        height: auto; /* アスペクト比を維持するためにautoに変更 */
-        aspect-ratio: 9 / 16; /* 9:16のアスペクト比を明示的に指定 */
-    }
-}
-
 /* すべての要素で box-sizing を統一 */
 * {
     box-sizing: border-box;
@@ -292,14 +282,41 @@ section {
 
 .modal-content {
     background: #1e293b;
-    margin: 10% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #374151;
     border-radius: 15px;
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
+    height: 90%;
+    max-width: 1500px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     color: #e5e7eb;
+    transition: transform 0.3s ease; /* スワイプ時の滑らかな移動 */
+    max-height: 80vh; /* ビューポート高さの80%に制限 */
+    overflow-y: auto; /* 縦スクロール有効 */
+    overflow-x: hidden; /* 横スクロール無効 */
+}
+
+/* モーダル内のSlick画像を強制表示・中央揃え・大きくする */
+.modal .slick-slide img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+}
+
+/* 画像がロードされたら枠を隠す */
+.modal .slick-slide img[src] {
+    border: none !important;
+}
+
+/* Slickの非アクティブスライドも強制表示（デバッグ用。不要なら削除） */
+.modal .slick-slide {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .close {
@@ -357,6 +374,37 @@ section {
 .game-section:hover {
     background-color: rgba(59, 130, 246, 0.05); /* 薄い青背景で全体をハイライト */
     border-color: #3b82f6; /* 青ボーダー */
+}
+
+/* ゲーム作品一覧のリスト項目全体をクリック可能に */
+#game .main li {
+    background: #1e293b;
+    padding: 20px; /* パディングを追加してクリック領域を広げる */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid #374151;
+    transition: background-color 0.3s ease; /* ホバー効果を追加 */
+    position: relative; /* リンクの絶対位置指定のため */
+}
+#game .main li:hover {
+    background-color: rgba(59, 130, 246, 0.1); /* 薄い青背景でクリック可能を示す */
+}
+
+/* リンクをリスト項目全体に広げる */
+#game .main a {
+    display: block; /* ブロックレベルに */
+    position: absolute; /* 絶対位置指定 */
+    top: 0; /* 上端 */
+    left: 0; /* 左端 */
+    width: 100%; /* 幅100% */
+    height: 100%; /* 高さ100% */
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 20px; /* パディングをliと同じに */
+    box-sizing: border-box; /* パディングを含めてサイズ計算 */
+    z-index: 1; /* テキストを前面に */
 }
 
 /* 詳細を見るボタンのスタイル */
@@ -450,7 +498,7 @@ section {
         flex: 1; /* 動画を柔軟に広げる */
         max-width: 50%; /* 最大50%幅 */
         height: auto; /* 高さを自動に */
-        aspect-ratio: 9 / 16; /* アスペクト比を維持 */
+        aspect-ratio: 9 / 10; /* アスペクト比を維持 */
     }
     
     /* 横動画を柔軟に広げる */
@@ -518,11 +566,48 @@ td {
     text-align: center;
 }
 
+
+/* スライダーをレスポンシブに */
+.slider {
+    width: 90%; /* 幅を90%に */
+    max-width: 1070px; /* 最大幅を指定 */
+    margin: 0 auto;
+}
+
+.slick-slide{
+    margin: 0px 20px;
+}
+
+/* Slickスライドの画像を確実に表示 */
+.slick-slide img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+}
+/* Slickトラックを中央揃え */
+.slick-track {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.slick-prev:before,
+.slick-next:before{
+    color: rgb(255, 255, 255);
+}
+
 #codePic {
-    max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 2px solid #10b981;
+}
+
+#codePic img {
+    display: block;         /* 縦マージンを効かせるため */
+    margin: 1rem auto;      /* 上下1rem、左右自動で中央寄せ */
+    max-width: 100%;
+    height: auto;
 }
 
 /* 活動とお問い合わせ */
