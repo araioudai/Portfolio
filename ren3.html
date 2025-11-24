@@ -379,29 +379,28 @@
     <script src="js/slider.js"></script>
 
     <style>
-        /* 追加: モーダル内のSlick画像を中央揃え・大きく表示（競合を減らす） */
+        /* 追加: モーダル内のSlick画像を強制表示・中央揃え・大きくする */
         .modal .slick-slide img {
-            display: block;
-            visibility: visible;
-            opacity: 1;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            margin: 0 auto;
-            max-width: 100%; /* 制限を緩く */
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            width: 100% !important;
+            height: auto !important;
+            object-fit: contain !important;
+            margin: 0 auto !important;
         }
         /* Slickスライドの画像を確実に表示 */
         .slick-slide img {
-            display: block;
-            visibility: visible;
-            opacity: 1;
-            width: 100%;
-            height: auto;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            width: 100% !important;
+            height: auto !important;
         }
         /* Slickトラックを中央揃え */
         .slick-track {
-            display: flex;
-            align-items: center;
+            display: flex !important;
+            align-items: center !important;
         }
     </style>
 </head>
@@ -692,4 +691,5 @@
                 </div>
                 <!-- 動画と表 -->
                 <div class="video-and-table-beside">
-                    <iframe src="https://www.youtube-nocookie.com/embed/A03Nol5yV3g" title="作品実演動画（目指そう明るい未来へ
+                    <iframe src="https://www.youtube-nocookie.com/embed/A03Nol5yV3g" title="作品実演動画（目指そう明るい未来へ）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="main

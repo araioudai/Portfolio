@@ -4,51 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
     
-    <!-- CSS読み込み -->
-    <link rel="stylesheet" href="css/reset.css">
-
-    <!-- JS読み込み -->
-    <script src="js/jquery-3.7.0.min.js"></script>
-
-    <!-- Slick -->
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-    <script src="plugins/slick/slick.js"></script>
-
-    <!-- lightbox -->
-    <link rel="stylesheet" href="plugins/lightbox/css/lightbox.css">
-    <script src="plugins/lightbox/js/lightbox.min.js"></script>
-
-    <!-- ページ専用 -->
-    <link rel="stylesheet" href="css/ren3.css">
-    <script src="js/slider.js"></script>
-
 </head>
 <body>
-    <!-- ナビゲーションを固定ヘッダーに変更 -->
-    <header id="fixed-header">
-        <div class="container">
-            <nav>
-                <div class="item">
-                    <button class="trigger">About</button>
-                    <div class="menu">
-                        <a href="#profile">自己紹介</a>
-                        <a href="#skill">スキル</a>
-                        <a href="#contact">お問い合わせ</a>
-                    </div>
-                </div>
-                
-                <div class="item">
-                    <button class="trigger">Work</button>
-                    <div class="menu">
-                        <a href="#game">ゲーム作品</a>
-                        <a href="#activity">活動</a> 
-                    </div>
-                </div>
-            </nav>
+    <!-- ナビゲーション -->
+    <div class="container">
+        <nav>
+        <div class="item">
+            <button class="trigger">About</button>
+            <div class="menu">
+                <a href="#profile">自己紹介</a>
+                <a href="#skill">スキル</a>
+                <a href="#contact">お問い合わせ</a>
+            </div>
         </div>
-    </header>
+        
+        <div class="item">
+            <button class="trigger">Work</button>
+            <div class="menu">
+                <a href="#game">ゲーム作品</a>
+                <a href="#activity">活動</a> 
+                <a href="#code">コード例</a>
+            </div>
+        </div>
+    </nav>
+    </div>
 
     <div class="center">
         <p id="name">新井 桜大<br>ポートフォリオ</p>
@@ -95,12 +76,12 @@
                             <ul>
                                 <li>REMATCH、eFootball</li>
                                 <li>フォートナイト、VALORANT</li>
-                                <li>GUILTY GEAR -STRIVE-</li>
-                                <li>PEAK、R.E.P.O.</li>
-                                <li>ブルーロック BLAZE BATTLE、ブルーロックPWC</li>
+                                <li>ブルーロック BLAZE BATTLE</li>
+                                <li>ブルーロックPWC</li>
                                 <li>NBA 2K Mobile、MLB PRO SPIRIT</li>
                                 <li>ブロスタ、OnePieceバウンティラッシュ</li>
                                 <li>Clash of Clans、Clash Royale</li>
+                                <li></li>
                             </ul>
                         </div>
 
@@ -120,7 +101,6 @@
         </div>
     </section>
 
-    <!-- ゲーム作品一覧 -->
     <section id="game">
         <div class="title">
             <strong>ゲーム作品一覧</strong>
@@ -137,294 +117,175 @@
             </div>
         </div>
 
-        <!-- モーダルダイアログ（詳細説明用） -->
-        <div id="game-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="modal-body">
-                    <!-- 詳細説明がここに動的に挿入される -->
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <!-- 各ゲームの詳細セクション -->
         <section id="slide">
-            <div class="title" data-game="slide" class="modal-trigger">
+            <div class="title">
                 <strong>SlideDungeon</strong>
             </div>
-            <div class="container game-section" data-game="slide">  <!-- game-section クラスを追加 -->
-                <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="slide">
-                    モバイル向けの<span style="color:red;">2Dパズルカジュアルゲーム</span>です。<br>
-                    <span style="color:red;">タップとスワイプ操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
-                    幕張メッセにて行われた、<span style="color:red;">東京ゲームショウ2025</span>や、<span style="color:red;">Creators' Playgroundに展示したゲーム</span>です。
-                </p>
-                <!-- 詳細説明（モーダル用） -->
-                <div id="slide-detail" style="display: none;">
-                    <h3>詳細説明</h3>
-                    <div class="container">
-                    <!-- スライダー -->
-                        <section id="codeImage" class="slider">
-                            <div>
-                                <a href="img/Manager.png" data-lightbox="code_image" data-title="マネージャー"><img id="codePic" src="img/Manager.png"></a>
-                            </div>
-                            <div>
-                                <a href="img/ステージ基準.png" data-lightbox="code_image" data-title="ステージ基準"><img id="codePic" src="img/ステージ基準.png"></a>
-                            </div>
-                            <div>
-                                <a href="img/ステージロード.png" data-lightbox="code_image" data-title="ステージロード"><img id="codePic" src="img/ステージロード.png"></a>
-                            </div>
-                            <div>
-                                <a href="img/ランキング1.png" data-lightbox="code_image" data-title="ランキング"><img id="codePic" src="img/ランキング1.png"></a>
-                            </div>
-                            <div>
-                                <a href="img/ランキング2.png" data-lightbox="code_image" data-title="ランキング"><img id="codePic" src="img/ランキング2.png"></a>
-                            </div>
-                            <div>
-                                <a href="img/プレイヤー体験.png" data-lightbox="code_image" data-title="プレイヤー体験"><img id="codePic" src="img/プレイヤー体験.png"></a>
-                            </div>
-                            <div>
-                                <a href="img/UI.png" data-lightbox="code_image" data-title="UI"><img id="codePic" src="img/UI.png"></a>
-                            </div>
-                        </section>    
-                    </div>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>aa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>aa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
-                <!-- 動画と表 -->
-                <div class="video-and-table-vertical">
-                    <iframe src="https://www.youtube-nocookie.com/embed/TOSUiWsB1Ec" title="作品実演動画（SlideDungeon）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="main">
-                        <table border="1">
-                            <tr><th></th><th>内容</th></tr>
-                            <tr><th>プラットフォーム</th><td>Android、iPhone</td></tr>
-                            <tr><th>言語</th><td>C#</td></tr>
-                            <tr><th>開発環境</th><td>Unity 2022.3.50f1</td></tr>
-                            <tr><th>開発期間</th><td>2025/09～2025/10</td></tr>
-                            <tr><th>制作時間</th><td>約80時間</td></tr>
-                            <tr><th>制作人数</th><td>1人</td></tr>
-                        </table>
-                    </div>
-                </div>
-                <!-- 詳細を見るボタン -->
-                <button class="modal-trigger detail-btn" data-game="slide">詳細を見る</button>
-            </div>
         </section>
+        <div class="container">
+            <p id="subTitle">作品概要</p>
+            <p id="explanation">
+                モバイル向けの<span style="color:red;">2Dパズルカジュアルゲーム</span>です。<br>
+                <span style="color:red;">タップとスワイプ操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
+                幕張メッセにて行われた、<span style="color:red;">東京ゲームショウ2025に展示したゲーム</span>です。
+            </p>
 
-        <!-- 他のゲームも同様に変更（例: #bomb） -->
-        <section id="bomb">
-            <div class="title" data-game="bomb" class="modal-trigger">
-                <strong>爆弾職人Polka</strong>
-            </div>
-            <div class="container game-section" data-game="bomb">  <!-- game-section クラスを追加 -->
-                <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="bomb">
-                    全機種対応の<span style="color:red;">2Dアクションゲーム</span>です。<br>
-                    プレイヤーは爆弾を使ってマップ内の敵を<span style="color:red;">すべて倒す</span>ことで<span style="color:rgb(255, 255, 0);">ゲームクリア</span>を目指します。<br>
-                    <span style="color:red;">戦略的な爆弾配置</span>が<span style="color:rgb(255, 255, 0);">鍵</span>となります。
-                </p>
-                <div id="bomb-detail" style="display: none;">
-                    <h3>詳細説明</h3>
-                    <p>爆弾職人Polkaは、全機種対応の2Dアクションゲームです。プレイヤーは爆弾を使ってマップ内の敵をすべて倒すことでゲームクリアを目指します。戦略的な爆弾配置が鍵です。</p>
+            <div class="video-and-table">
+                <iframe src="https://www.youtube.com/embed/TOSUiWsB1Ec" title="作品実演動画（SlideDungeon）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="main">
                     <table border="1">
-                        <tr><th>プラットフォーム</th><td>Android、PC</td></tr>
-                        <tr><th>言語</th><td>C#</td></tr>
-                        <tr><th>開発環境</th><td>Unity 2022.3.22f1</td></tr>
-                        <tr><th>開発期間</th><td>2025/～2025/</td></tr>
-                        <tr><th>制作時間</th><td>時間</td></tr>
-                        <tr><th>制作人数</th><td>3人</td></tr>
+                        <tr>
+                            <th></th>
+                            <th>内容</th>
+                        </tr>
+                        <tr>
+                            <th>プラットフォーム</th>
+                            <td>Android、iPhone</td>
+                        </tr>
+                        <tr>
+                            <th>言語</th>
+                            <td>C#</td>
+                        </tr>
+                        <tr>
+                            <th>開発環境</th>
+                            <td>Unity 2022.3.50f1</td>
+                        </tr>
+                        <tr>
+                            <th>開発期間</th>
+                            <td>2025/09～2025/10</td>
+                        </tr>
+                        <tr>
+                            <th>制作時間</th>
+                            <td>約80時間</td>
+                        </tr>
+                        <tr>
+                            <th>制作人数</th>
+                            <td>1人</td>
+                        </tr>
                     </table>
                 </div>
-                <!-- 動画と表 -->
-                <div class="video-and-table-beside">
-                    <iframe src="https://www.youtube-nocookie.com/embed/youtubeIDを追加" title="作品実演動画（爆弾職人Polka）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="main">
-                        <table border="1">
-                            <tr><th></th><th>内容</th></tr>
-                            <tr><th>プラットフォーム</th><td>Android、PC</td></tr>
-                            <tr><th>言語</th><td>C#</td></tr>
-                            <tr><th>開発環境</th><td>Unity 2022.3.22f1</td></tr>
-                            <tr><th>開発期間</th><td>2025/～2025/</td></tr>
-                            <tr><th>制作時間</th><td>時間</td></tr>
-                            <tr><th>制作人数</th><td>3人</td></tr>
-                        </table>
-                    </div>
-                </div>
-                <!-- 詳細を見るボタン -->
-                <button class="modal-trigger detail-btn" data-game="bomb">詳細を見る</button>
+            </div>
+            
+        </div>
+
+        <section id="bomb">
+            <div class="title">
+                <strong>爆弾職人Polka</strong>
             </div>
         </section>
+        <div class="container">
+            <p id="subTitle">作品概要</p>
+            <p id="explanation">
+                全機種対応の<span style="color:red;">2Dアクションゲーム</span>です。<br>
+                マップ内の敵を<span style="color:red;">すべて倒す</span>ことで<span style="color:red;">ゲームクリア</span>することができます。<br>
+                説明追加
+            </p>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <th>プラットフォーム</th>
+                    <td>Android、PC</td>
+                </tr>
+                <tr>
+                    <th>言語</th>
+                    <td>C#</td>
+                </tr>
+                <tr>
+                    <th>開発環境</th>
+                    <td>Unity 2022.3.22f1</td>
+                </tr>
+                <tr>
+                    <th>開発期間</th>
+                    <td>2025/～2025/</td>
+                </tr>
+                <tr>
+                    <th>制作時間</th>
+                    <td>時間</td>
+                </tr>
+                <tr>
+                    <th>制作人数</th>
+                    <td>3人</td>
+                </tr>
+            </table>
+        </div>
 
         <section id="future">
             <div class="title">
                 <strong>目指そう明るい未来</strong>
             </div>
-            <div class="container game-section" data-game="future">  <!-- game-section クラスを追加 -->
-                <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="future">
-                    PC向けの<span style="color:red;">2Dシュミレーションゲーム</span>です。<br>
-                    操作方法はシンプルで<span style="color:red;">クリック（タップ）操作のみ</span>となります。「さく」というテーマを元に<br>
-                    ゲームジャムイベントにて制作しました。<br>
-                    イベント内の投票の結果、12チーム中<span style="color:red;">プレゼン、ゲーム内容の両ジャンルとも3位</span>を<br>
-                    獲得しました。
-                </p>
-                <!-- 詳細説明を追加（仮の内容。実際の詳細を入れてください） -->
-                <div id="future-detail" style="display: none;">
-                    <h3>詳細説明</h3>
-                    <p>目指そう明るい未来は、PC向けの2Dシミュレーションゲームです。クリック操作でシンプルに遊べます。ゲームジャムで制作され、投票で3位を獲得しました。</p>
-                    <table border="1">
-                        <tr><th>プラットフォーム</th><td>PC</td></tr>
-                        <tr><th>言語</th><td>C#</td></tr>
-                        <tr><th>開発環境</th><td>Unity 2022.3.22f1</td></tr>
-                        <tr><th>開発期間</th><td>2025/4/8～2025/4/10</td></tr>
-                        <tr><th>制作時間</th><td>約30時間</td></tr>
-                        <tr><th>制作人数</th><td>4人</td></tr>
-                    </table>
-                </div>
-                <!-- 動画と表 -->
-                <div class="video-and-table-beside">
-                    <iframe src="https://www.youtube-nocookie.com/embed/A03Nol5yV3g" title="作品実演動画（目指そう明るい未来へ）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="main">
-                        <table border="1">
-                            <tr><th></th><th>内容</th></tr>
-                            <tr><th>プラットフォーム</th><td>PC</td></tr>
-                            <tr><th>言語</th><td>C#</td></tr>
-                            <tr><th>開発環境</th><td>Unity 2022.3.22f1</td></tr>
-                            <tr><th>開発期間</th><td>2025/4/8～2025/4/10</td></tr>
-                            <tr><th>制作時間</th><td>約30時間</td></tr>
-                            <tr><th>制作人数</th><td>4人</td></tr>
-                        </table>
-                    </div>
-                </div>
-                <!-- 詳細を見るボタン -->
-                <button class="modal-trigger detail-btn" data-game="future">詳細を見る</button>
-            </div>
         </section>
+        <div class="container">
+            <p id="subTitle">作品概要</p>
+            <p id="explanation">
+                PC向けの<span style="color:red;">2Dシュミレーションゲーム</span>です。<br>
+                操作方法はシンプルで<span style="color:red;">クリック（タップ）操作のみ</span>となります。「さく」というテーマを元に<br>
+                ゲームジャムイベントにて制作しました。<br>
+                イベント内の投票の結果、12チーム中<span style="color:red;">プレゼン、ゲーム内容の両ジャンルとも3位</span>を<br>
+                獲得しました。
+            </p>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <th>プラットフォーム</th>
+                    <td>PC</td>
+                </tr>
+                <tr>
+                    <th>言語</th>
+                    <td>C#</td>
+                </tr>
+                <tr>
+                    <th>開発環境</th>
+                    <td>Unity 2022.3.22f1</td>
+                </tr>
+                <tr>
+                    <th>開発期間</th>
+                    <td>2025/4/8～2025/4/10</td>
+                </tr>
+                <tr>
+                    <th>制作時間</th>
+                    <td>約30時間</td>
+                </tr>
+                <tr>
+                    <th>制作人数</th>
+                    <td>4人</td>
+                </tr>
+            </table>
+        </div>
 
         <section id="switch">
             <div class="title">
                 <strong>TwilightSwitch</strong>
             </div>
-            <div class="container game-section" data-game="switch">  <!-- game-section クラスを追加 -->
-                <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="switch">
-                    PC向けの<span style="color:red;">2Dアクションゲーム</span>です。<br>
-                    「表裏」というテーマを元にゲームジャムイベントにて制作しました。<br>
-                </p>
-
-                <div id="switch-detail" style="display: none;">
-                    <h3>詳細説明</h3>
-                    <p>TwilightSwitchの詳細説明をここに追加。</p>
-                    
-                </div>
-                <!-- 動画と表 -->
-                <div class="video-and-table-beside">
-                    <iframe src="https://www.youtube-nocookie.com/embed/youtubeIDを追加" title="作品実演動画（爆弾職人Polka）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="main">
-                        <table border="1">
-                            <tr><th></th><th>内容</th></tr>
-                            <tr><th>プラットフォーム</th><td>PC</td></tr>
-                            <tr><th>言語</th><td>C#</td></tr>
-                            <tr><th>開発環境</th><td>Unity 2022.3.22f1</td></tr>
-                            <tr><th>開発期間</th><td>2025/7/28～2025/7/30</td></tr>
-                            <tr><th>制作時間</th><td>約25時間</td></tr>
-                            <tr><th>制作人数</th><td>4人</td></tr>
-                        </table>
-                    </div>
-                </div>
-                <!-- 詳細を見るボタン -->
-                <button class="modal-trigger detail-btn" data-game="switch">詳細を見る</button>
-            </div>
         </section>
+        <div class="container">
+            説明
+        </div>
 
         <section id="xevious">
             <div class="title">
                 <strong>XEVIOUS(ゼビウス)</strong>
             </div>
-            <div class="container game-section" data-game="xevious">  <!-- game-section クラスを追加 -->
-                <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="xevious">
-                    XEVIOUSの説明文をここに追加してください。<br>
-                    例: プラットフォームや特徴を記述。
-                </p>
-                <!-- 詳細説明を追加（仮の内容。実際の詳細を入れてください） -->
-                <div id="xevious-detail" style="display: none;">
-                    <h3>詳細説明</h3>
-                    <p>XEVIOUSの詳細説明をここに追加。</p>
-                    <table border="1">
-                        <tr><th>プラットフォーム</th><td>例: PC</td></tr>
-                        <tr><th>言語</th><td>例: C#</td></tr>
-                        <!-- 他の項目を追加 -->
-                    </table>
-                </div>
-                <!-- 動画と表 -->
-                <div class="video-and-table-beside">
-                    <iframe src="https://www.youtube-nocookie.com/embed/youtubeIDを追加" title="作品実演動画（XEVIOUS(ゼビウス)）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="main">
-                        <table border="1">
-                            <tr><th></th><th>内容</th></tr>
-                            <tr><th>プラットフォーム</th><td>PC</td></tr>
-                            <tr><th>言語</th><td>C/C++</td></tr>
-                            <tr><th>開発環境</th><td>DxLib</td></tr>
-                            <tr><th>開発期間</th><td>2024/～2024/</td></tr>
-                            <tr><th>制作時間</th><td>約時間</td></tr>
-                            <tr><th>制作人数</th><td>4人</td></tr>
-                        </table>
-                    </div>
-                </div>
-                <!-- 詳細を見るボタン -->
-                <button class="modal-trigger detail-btn" data-game="xevious">詳細を見る</button>
-            </div>
         </section>
+        <div class="container">
+            説明
+        </div>
+
+    </section>
+
+    <section id="code">
+        <div class="title">
+            <strong>コード例</strong>
+        </div>
+        <div class="container">
+            <img id="codePic" src="img/Manager.png" width="910" height="620">    
+        </div>
     </section>
 
     <section id="activity">
