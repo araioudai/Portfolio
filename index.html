@@ -129,6 +129,8 @@
             <div class="main">
                 <ol>
                     <li type="1"><a href="#slide">SlideDungeon</a></li>
+                    <li type="1"><a href="#rts">RTS（開発中）</a></li>
+                    <li type="1"><a href="#run">RunPlayer（開発中）</a></li>
                     <li type="1"><a href="#bomb">爆弾職人</a></li>
                     <li type="1"><a href="#treasure">Trick or Find</a></li>
                     <li type="1"><a href="#future">目指そう明るい未来</a></li>
@@ -211,6 +213,78 @@
                 <button class="modal-trigger detail-btn" data-game="slide">詳細を見る</button>
             </div>
         </section>
+
+
+        <section id="rts">
+            <div class="title" data-game="rts" class="modal-trigger">
+                <strong>RTS（開発中）</strong>
+            </div>
+            <div class="container game-section" data-game="rts">  <!-- game-section クラスを追加 -->
+                <p id="subTitle">作品概要</p>
+                <p class="explanation modal-trigger" data-game="rts">
+                    PC、モバイル向けの<span style="color:red;">3DRTS（リアルタイムストラテジー）ゲーム</span>です。<br>
+                    <span style="color:red;">タップ（クリック）操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
+                </p>
+                <!-- 詳細説明（モーダル用） -->
+                <div id="rts-detail" style="display: none;">
+                    <h3>詳細説明</h3>
+                   
+                </div>
+                <!-- 動画と表 -->
+                <div class="video-and-table-vertical">
+                    <iframe src="https://www.youtube-nocookie.com/embed/youtoubeリンク" title="作品実演動画（rtsDungeon）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="main">
+                        <table border="1">
+                            <tr><th></th><th>内容</th></tr>
+                            <tr><th>プラットフォーム</th><td>PC、Android、iPhone</td></tr>
+                            <tr><th>言語</th><td>C#</td></tr>
+                            <tr><th>開発環境</th><td>Unity 6000.2.6f2</td></tr>
+                            <tr><th>開発期間</th><td>2025/11～2025/12</td></tr>
+                            <tr><th>制作時間</th><td>約30時間</td></tr>
+                            <tr><th>制作人数</th><td>3人</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 詳細を見るボタン -->
+                <button class="modal-trigger detail-btn" data-game="rts">詳細を見る</button>
+            </div>
+        </section>
+
+
+        <section id="run">
+            <div class="title" data-game="run" class="modal-trigger">
+                <strong>RunPlayer（開発中）</strong>
+            </div>
+            <div class="container game-section" data-game="run">  <!-- game-section クラスを追加 -->
+                <p id="subTitle">作品概要</p>
+                <p class="explanation modal-trigger" data-game="run">
+                    <span style="color:red;">2Dプレイヤー</span>です。<br>
+                </p>
+                <!-- 詳細説明（モーダル用） -->
+                <div id="run-detail" style="display: none;">
+                    <h3>詳細説明</h3>
+                   
+                </div>
+                <!-- 動画と表 -->
+                <div class="video-and-table-vertical">
+                    <iframe src="https://www.youtube-nocookie.com/embed/youtoubeリンク" title="作品実演動画（runDungeon）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="main">
+                        <table border="1">
+                            <tr><th></th><th>内容</th></tr>
+                            <tr><th>プラットフォーム</th><td>PC</td></tr>
+                            <tr><th>言語</th><td>C++</td></tr>
+                            <tr><th>開発環境</th><td>DxLib</td></tr>
+                            <tr><th>開発期間</th><td>2025/10～2025/12</td></tr>
+                            <tr><th>制作時間</th><td>約30時間</td></tr>
+                            <tr><th>制作人数</th><td>1人</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 詳細を見るボタン -->
+                <button class="modal-trigger detail-btn" data-game="run">詳細を見る</button>
+            </div>
+        </section>
+
 
         <section id="bomb">
             <div class="title" data-game="bomb" class="modal-trigger">
@@ -317,7 +391,7 @@
                 <!-- 詳細説明を追加（仮の内容。実際の詳細を入れてください） -->
                 <div id="future-detail" style="display: none;">
                     <h3>詳細説明</h3>
-                    <p>目指そう明るい未来は、PC向けの2Dシミュレーションゲームです。クリック操作でシンプルに遊べます。ゲームジャムで制作され、投票で3位を獲得しました。</p>
+                    <p>目指そう明るい未来は、PC向けの2Dシミュレーションゲームです。クリック操作でシンプルに遊べます。ゲームジャムで制作し、投票で3位を獲得しました。</p>
                     <table border="1">
                         <tr><th>プラットフォーム</th><td>PC</td></tr>
                         <tr><th>言語</th><td>C#</td></tr>
@@ -390,8 +464,9 @@
             <div class="container game-section" data-game="xevious">  <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
                 <p class="explanation modal-trigger" data-game="xevious">
-                    XEVIOUSの説明文をここに追加してください。<br>
-                    例: プラットフォームや特徴を記述。
+                    PC向けの<span style="color:red;">2Dシューティングゲーム</span>です。<br>
+                    1年次の進級制作として開発し、DxLibを用いて<span style="color:red;">『ゼビウス』のステージ1を再現</span>することを目指して制作しました。
+                    私は自機部分の実装を担当し、<span style="color:red;">アニメーション表現や操作感</span>にこだわって、原作らしい動きを再現できるよう作り込みました。
                 </p>
                 <!-- 詳細説明を追加（仮の内容。実際の詳細を入れてください） -->
                 <div id="xevious-detail" style="display: none;">
