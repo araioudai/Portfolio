@@ -222,8 +222,11 @@
             <div class="container game-section" data-game="rts">  <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
                 <p class="explanation modal-trigger" data-game="rts">
-                    PC、モバイル向けの<span style="color:red;">3DRTS（リアルタイムストラテジー）ゲーム</span>です。<br>
-                    <span style="color:red;">タップ（クリック）操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
+                    PC、モバイル向けの<span style="color:red;">3DRTS（リアルタイムストラテジー）ゲーム</span>です。<span style="color:red;">タップ（クリック）操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
+                    本作品において、<span style="color:red;">ユニットAIおよび移動制御の設計・実装</span>を担当しています。<br>
+                    NavMeshを用いた敵ユニットおよびプレイヤー召喚ユニットの経路探索・移動制御を実装しました。<br>
+                    また、視界判定と障害物判定を行い、条件に応じて<span style="color:red;">最も近い敵を選択して攻撃するロジック</span>を構築しています。<br>
+                    行動はステートマシンによって「移動」「攻撃」を切り替える構成とし、拡張性・保守性を意識した設計を行っています。<br>
                 </p>
                 <!-- 詳細説明（モーダル用） -->
                 <div id="rts-detail" style="display: none;">
@@ -231,8 +234,8 @@
                    
                 </div>
                 <!-- 動画と表 -->
-                <div class="video-and-table-vertical">
-                    <iframe src="https://www.youtube-nocookie.com/embed/youtoubeリンク" title="作品実演動画（rtsDungeon）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-and-table-beside">
+                    <iframe src="https://www.youtube-nocookie.com/embed/watch?v=5w9KBapS7W4" title="作品実演動画（爆弾職人Polka）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="main">
                         <table border="1">
                             <tr><th></th><th>内容</th></tr>
@@ -258,7 +261,10 @@
             <div class="container game-section" data-game="run">  <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
                 <p class="explanation modal-trigger" data-game="run">
-                    <span style="color:red;">2Dプレイヤー</span>です。<br>
+                    <span style="color:red;">DxLibとC++</span>を用いて、2Dアクションゲームに<span style="color:red;">汎用的に使えるPlayerクラス</span>を開発しました。<br>
+                    移動、ジャンプ、二段ジャンプ、重力反転、しゃがみ、スライディングなどの各機能を<br>
+                    フラグ管理（true / false）で制御することで、機能の有無を<span style="color:red;">簡単に切り替えられる設計</span>にしています。<br>
+                    これにより、<span style="color:red;">異なるゲーム仕様にも対応可能な拡張性の高い構成</span>となっています。<br>
                 </p>
                 <!-- 詳細説明（モーダル用） -->
                 <div id="run-detail" style="display: none;">
@@ -266,8 +272,8 @@
                    
                 </div>
                 <!-- 動画と表 -->
-                <div class="video-and-table-vertical">
-                    <iframe src="https://www.youtube-nocookie.com/embed/youtoubeリンク" title="作品実演動画（runDungeon）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-and-table-beside">
+                    <iframe src="https://www.youtube-nocookie.com/embed/youtoubeリンク" title="作品実演動画（爆弾職人Polka）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="main">
                         <table border="1">
                             <tr><th></th><th>内容</th></tr>
