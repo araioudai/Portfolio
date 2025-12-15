@@ -525,7 +525,7 @@ section {
 }
 
 /* ゲーム作品の各紹介の後に空白を追加（重なり防止） */
-#slide, #bomb, #future, #switch, #xevious {
+#slide, #rts, #run, #bomb, #treasure, #future, #switch, #xevious {
     background: #1e293b;
     padding: 40px;
     border-radius: 15px;
