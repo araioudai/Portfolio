@@ -227,6 +227,10 @@ section {
     border: 1px solid #374151;
 }
 
+#skill table {
+    margin: 0 auto;
+}
+
 /* ゲーム作品一覧 */
 #game .main ol {
     display: grid;
