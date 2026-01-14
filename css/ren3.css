@@ -466,10 +466,10 @@ section {
 }
 
 /* 動画埋め込みのサイズを9:16（ショート動画用）に変更 */
-.video-and-table-vertical iframe {
+.video-and-table-vertical .youtube-iframe {
     width: 100%;
-    max-width: 236px; /* 9:16の幅に調整 */
-    height: 420px; /* 9:16の高さに調整 */
+    max-width: 476px;
+    height: 620px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -513,14 +513,6 @@ section {
         max-width: 50%; /* 最大50%幅 */
     }
 
-    /* 縦動画を柔軟に広げる */
-    .video-and-table-vertical iframe {
-        flex: 1; /* 動画を柔軟に広げる */
-        max-width: 50%; /* 最大50%幅 */
-        height: auto; /* 高さを自動に */
-        aspect-ratio: 9 / 10; /* アスペクト比を維持 */
-    }
-    
     /* 横動画を柔軟に広げる */
     .video-and-table-beside iframe {
         flex: 1; /* 動画を柔軟に広げる */
@@ -554,6 +546,44 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid #374151;
 }
+
+/* PDF用の処理 */
+/* table + PDF を横いっぱいに */
+.table-area {
+    width: 100%;
+}
+
+.pdf-wrapper {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* PDF表示 */
+.pdf-viewer {
+    width: 100%;
+    height: 450px;
+    border: 1px solid #333;
+}
+
+/* タイトル */
+.pdf-title {
+    margin-top: 24px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pdf-link {
+    margin-top: 12px;
+    text-align: right;
+    display: block;
+}
+
+.pdf-link a {
+    color: #60a5fa;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
 
 table {
     width: 100%;
