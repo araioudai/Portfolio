@@ -1,5 +1,5 @@
 /*
- * ナビゲーションメニュー開閉処理
+ ナビゲーションメニュー開閉処理
 */
 
 //メニュー全体を取得
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    
+
     //モーダル閉じる処理
     document.querySelector('.close').addEventListener('click', closeModal);
 
@@ -139,6 +139,17 @@ document.addEventListener('DOMContentLoaded', function () {
         ?.classList.add('active');
 
     setTimeout(initActivitySliders, 200);
+
+    // lightboxの初期化後にPDFリンクを除外
+    $(document).ready(function () {
+        // lightboxのリンクをフィルタリング（PDFを除外）
+        $('a[data-lightbox]').each(function () {
+            var href = $(this).attr('href');
+            if (href && href.endsWith('.pdf')) {
+                $(this).removeAttr('data-lightbox'); // PDFリンクからlightboxを削除
+            }
+        });
+    });
 });
 
 

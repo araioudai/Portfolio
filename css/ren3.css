@@ -572,18 +572,22 @@ section {
     font-weight: bold;
 }
 
-.pdf-link {
-    margin-top: 12px;
-    text-align: right;
-    display: block;
-}
-
 .pdf-link a {
     color: #60a5fa;
     font-size: 14px;
     text-decoration: underline;
 }
 
+.pdf-link {
+    display: block !important;
+    color: blue !important;
+    font-size: 18px !important;
+    margin: 10px 0 !important;
+    text-decoration: underline;
+}
+.pdf-link:hover {
+    color: rgb(115, 115, 254);
+}
 
 table {
     width: 100%;
