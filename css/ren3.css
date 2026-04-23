@@ -580,13 +580,13 @@ section {
 
 .pdf-link {
     display: block !important;
-    color: blue !important;
+    color: rgb(150, 150, 255) !important;
     font-size: 18px !important;
     margin: 10px 0 !important;
     text-decoration: underline;
 }
 .pdf-link:hover {
-    color: rgb(115, 115, 254);
+    color: rgb(45, 45, 218);
 }
 
 table {
