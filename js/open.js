@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
+/*
     //ゲームセクション全体クリック → モーダル表示
     document.querySelectorAll('.game-section').forEach(section => {
         section.addEventListener('click', (e) => {
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
             openModal();
         });
     });
-
-
+*/
+  
     //「詳細を見る」ボタンクリック処理
     document.querySelectorAll('.modal-trigger[data-game]').forEach(trigger => {
         trigger.addEventListener('click', (e) => {
@@ -181,16 +181,19 @@ function closeModal() {
 }
 
 
-//Slick（モーダル内）初期化
 function initializeSlickInModal() {
-    const slider = $('#modal-body .slider');
-    if (!slider.length || slider.hasClass('slick-initialized')) return;
+    const $slider = $('#modal-body .slider');
+    if (!$slider.length || $slider.hasClass('slick-initialized')) return;
 
-    slider.slick({
+    //画像の枚数を確認
+    const imageCount = $slider.find('img').length;
+
+    $slider.slick({
         slidesToShow: 1,
-        dots: true,
-        arrows: true,
-        swipe: true
+        dots: imageCount > 1,    //1枚ならドットを隠す
+        arrows: imageCount > 1,  //1枚なら矢印を隠す
+        swipe: imageCount > 1,   //1枚ならスワイプ無効
+        adaptiveHeight: true     //画像の高さに合わせる
     });
 }
 

@@ -410,12 +410,12 @@ section {
 /* 詳細を見るボタンのスタイル */
 .detail-btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 24px 36px;
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); /* 青グラデーション */
     color: #ffffff;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -646,6 +646,54 @@ td {
 .slick-next:before{
     color: rgb(255, 255, 255);
 }
+
+/* モーダル内のスライダー調整 */
+#modal-body .slider img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Slickの矢印のカスタマイズ（一例） */
+.slick-prev, .slick-next {
+    z-index: 10;
+}
+.slick-prev { left: 10px; }
+.slick-next { right: 10px; }
+
+/* ドットの位置調整 */
+.slick-dots {
+    bottom: 10px;
+}
+
+/* スライド同士の間に隙間を作る */
+.slider .slick-slide {
+    margin: 0 10px; /* 左右に10pxずつ隙間を作る */
+}
+
+/* 画像自体の大きさを制限して小さく見せる */
+.slider img {
+    width: 100%;      /* 基本は親要素に合わせる */
+    max-width: 750px; /* 最大幅を指定 */
+    margin: 0 auto;   /* 中央寄せ */
+    height: auto;
+    display: block;
+}
+
+.sliderWidth .slick-slide{
+    margin: 0 10px; /* 左右に10pxずつ隙間を作る */
+}
+
+/* 画像自体の大きさを制限して小さく見せる */
+.sliderHeight img {
+    width: 100%;      /* 基本は親要素に合わせる */
+    max-width: 250px; /* 最大幅を指定 */
+    margin: 0 auto;   /* 中央寄せ */
+    height: auto;
+    display: block;
+}
+
 
 #codePic {
     border-radius: 10px;

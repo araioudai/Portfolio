@@ -177,12 +177,12 @@
 
         <!-- 各ゲームの詳細セクション -->
         <section id="slide">
-            <div class="title" data-game="slide" class="modal-trigger">
+            <div class="title" data-game="slide">
                 <strong>SlideDungeon</strong>
             </div>
             <div class="container game-section" data-game="slide"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="slide">
+                <p class="explanation" data-game="slide">
                     モバイル向けの<span style="color:red;">2Dパズルカジュアルゲーム</span>です。<br>
                     <span style="color:red;">タップとスワイプ操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
                     幕張メッセにて行われた、<span style="color:red;">東京ゲームショウ2025</span>や、<span style="color:red;">Creators'
@@ -190,31 +190,24 @@
                 </p>
                 <!-- 詳細説明（モーダル用） -->
                 <div id="slide-detail" style="display: none;">
-                    <p><a href="pdf/プログラム説明資料（SlideDungeon）.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">プログラム説明PDFを開く（別タブで閲覧）</a></p>
-                    <h3>詳細説明</h3>
-                    <div class="container">
-                        <a href="img/Manager.png" data-lightbox="slide">
-                            <img class="code-Pic" src="img/Manager.png">
-                        </a>
-                        <a href="img/ステージ基準.png" data-lightbox="slide">
-                            <img class="code-Pic" src="img/ステージ基準.png">
-                        </a>
-                        <a href="img/ステージロード.png" data-lightbox="slide">
-                            <img class="code-Pic" src="img/ステージロード.png">
-                        </a>
-                        <a href="img/ランキング1.png" data-lightbox="slide">
-                            <img class="code-Pic" src="img/ランキング1.png">
-                        </a>
-                        <a href="img/ランキング2.png" data-lightbox="slide">
-                            <img class="code-Pic" src="img/ランキング2.png">
-                        </a>
-                        <a href="img/プレイヤー体験.png" data-lightbox="slide">
-                            <img class="code-Pic" src="img/プレイヤー体験.png">
-                        </a>
-                        <a href="img/UI.png" data-lightbox="slide">
-                            <img class="code-Pic" src="img/UI.png">
-                        </a>
+                    <h3 id="subTitle">プレイ画面</h3>
+                    <div class="slider sliderHeight">
+                        <div><img src="img/Slide_Title.png" alt="タイトル画面"></div>
+                        <div><img src="img/Slide_Rank.png" alt="ランキング画面"></div>
+                        <div><img src="img/Slide_Game.png" alt="ゲーム画面"></div>
+                        <div><img src="img/Slide_Result.png" alt="育成画面"></div>
                     </div>
+                    <h3 id="subTitle">プログラム説明</h3>
+                    <div class="slider">
+                        <div><img src="img/Manager.png" alt="マネージャ"></div>
+                        <div><img src="img/ステージ基準.png" alt="ステージ基準"></div>
+                        <div><img src="img/ステージロード.png" alt="ステージロード面"></div>
+                        <div><img src="img/ランキング1.png" alt="ランキング1"></div>
+                        <div><img src="img/ランキング2.png" alt="ランキング2"></div>
+                        <div><img src="img/プレイヤー体験.png" alt="プレイヤー体験"></div>
+                        <div><img src="img/UI.png" alt="UI"></div>
+                    </div>
+                    <p><a href="pdf/プログラム説明資料（SlideDungeon）.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">プログラム説明PDFを開く（別タブで閲覧）</a></p>
                 </div>
                 <!-- 動画と表 -->
                 <div class="video-and-table-vertical">
@@ -267,12 +260,12 @@
 
 
         <section id="rts">
-            <div class="title" data-game="rts" class="modal-trigger">
+            <div class="title" data-game="rts">
                 <strong>RTS（開発中）</strong>
             </div>
             <div class="container game-section" data-game="rts"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="rts">
+                <p class="explanation" data-game="rts">
                     PC、モバイル向けの<span style="color:red;">3DRTS（リアルタイムストラテジー）ゲーム</span>です。<span
                         style="color:red;">タップ（クリック）操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
                     本作品において、<span style="color:red;">ユニットAIおよび移動制御の設計・実装</span>を担当しています。<br>
@@ -282,6 +275,12 @@
                 </p>
                 <!-- 詳細説明（モーダル用） -->
                 <div id="rts-detail" style="display: none;">
+                    <h3 id="subTitle">プレイ画面</h3>
+                    <div class="slider">
+                        <div><img src="img/RTS_Title.png" alt="タイトル画面"></div>
+                        <div><img src="img/RTS_Game.png" alt="ゲーム画面"></div>
+                        <div><img src="img/RTS_Nurturing.png" alt="育成画面"></div>
+                    </div>
                     <h3>担当箇所</h3>
                     <p>
                         NavMeshを用いた敵ユニットおよびプレイヤー召喚ユニットの経路探索・移動制御システムを設計・実装しました。各ユニットはあらかじめ設定されたルートに沿って自律的に移動する構成とし、進軍型RTSにおけるモブユニットの基本挙動を実装しています。また、索敵範囲内の視界判定および障害物判定を行い、条件を満たした中から最も近い敵ユニットを選択して攻撃するAIロジックを構築しました。
@@ -333,12 +332,12 @@
 
 
         <section id="run">
-            <div class="title" data-game="run" class="modal-trigger">
+            <div class="title" data-game="run">
                 <strong>ActionPlayerClass（開発中）</strong>
             </div>
             <div class="container game-section" data-game="run"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="run">
+                <p class="explanation" data-game="run">
                     <span style="color:red;">DxLibとC++</span>を用いて、2Dアクションゲームに<span
                         style="color:red;">汎用的に使えるPlayerクラス</span>を開発しました。<br>
                     移動、ジャンプ、二段ジャンプ、重力反転、しゃがみ、スライディングなどの各機能を<br>
@@ -400,19 +399,27 @@
 
 
         <section id="bomb">
-            <div class="title" data-game="bomb" class="modal-trigger">
+            <div class="title" data-game="bomb">
                 <strong>爆弾職人Polka</strong>
             </div>
             <div class="container game-section" data-game="bomb"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="bomb">
+                <p class="explanation" data-game="bomb">
                     全機種対応の<span style="color:red;">2Dアクションゲーム</span>です。<br>
                     プレイヤーは爆弾を使ってマップ内の敵を<span style="color:red;">すべて倒す</span>ことで<span
                         style="color:rgb(255, 255, 0);">ゲームクリア</span>を目指します。<br>
                     <span style="color:red;">戦略的な爆弾配置</span>が<span style="color:rgb(255, 255, 0);">鍵</span>となります。
                 </p>
                 <div id="bomb-detail" style="display: none;">
-                    <h3>担当箇所</h3>
+                    <h3 id="subTitle">プレイ画面</h3>
+                    <div class="slider">
+                        <div><img src="img/Polka_Title.png" alt="タイトル画面"></div>
+                        <div><img src="img/Polka_Select.png" alt="セレクト画面"></div>
+                        <div><img src="img/Polka_Game1.png" alt="ゲーム画面"></div>
+                        <div><img src="img/Polka_Game2.png" alt="ゲーム画面"></div>
+                        <div><img src="img/Polka_Result.png" alt="結果画面"></div>
+                    </div>
+                    <h3 id="subTitle">担当箇所</h3>
                     <p>
                         Input
                         Systemを用いた全機種対応の入力処理を実装し、CSVデータによるステージ描画システムを構築しました。爆弾は通常・天井（上）破壊用・床（下）破壊用・地雷の4種類を実装し、マス単位での管理ロジックにより爆発範囲や地形破壊を制御しています。また、ジャンプ入力には先行入力を導入し、天井の有無に応じてジャンプ力を切り替えることで、状況に応じた上下移動を可能にしました。そのほか、鍵によるステージ解放制御、視野範囲を動的に変更できるシステム、シーン管理および各種マネージャーの実装、タイトル画面の設定、爆弾・床爆発のアニメーション制御、制限時間管理、UI全般の実装、全体の機能結合までを担当しました。
@@ -466,24 +473,31 @@
         </section>
 
         <section id="treasure">
-            <div class="title" data-game="treasure" class="modal-trigger">
+            <div class="title" data-game="treasure">
                 <strong>Trick or Find</strong>
             </div>
             <div class="container game-section" data-game="treasure"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="treasure">
+                <p class="explanation" data-game="treasure">
                     筐体対応の<span style="color:red;">2DアクションRPG</span>です。<br>
                     学園祭に展示するために作成したゲームです。<br>
                     プレイヤーは銃を使い、マップ内の<span style="color:red;">敵を倒しながら宝を収集してスコアを獲得</span>します。
                     状況に応じた<span style="color:red;">戦略的なモード切替</span>が高スコア獲得の鍵となるゲームです。
                 </p>
                 <div id="treasure-detail" style="display: none;">
-                    <h3>担当箇所</h3>
+                    <h3 id="subTitle">プレイ画面</h3>
+                    <div class="slider">
+                        <div><img src="img/Trick_Title.png" alt="タイトル画面"></div>
+                        <div><img src="img/Trick_Game.png" alt="ゲーム画面"></div>
+                        <div><img src="img/Trick_Tutorial.png" alt="操作説明画面"></div>
+                        <div><img src="img/Trick_Result.png" alt="結果画面"></div>
+                    </div>
+                    <h3 id="subTitle">担当箇所</h3>
                     <p>
                         ゲーム全体を制御するシーン管理およびマネージャー機能の設計・実装を担当しました。基底クラスを用いた設計により、3種類の宝ごとの挙動を継承・分岐処理として実装し、拡張性を意識した構成としています。また、タイトル画面を含むフェードイン／フェードアウト演出、プレイヤーおよび敵キャラクターのアニメーション制御、サーチモードの探索ロジック、スコア管理、UI全般の実装、ステージ生成、各機能の結合、筐体向け操作説明表示までを一貫して担当しました。
                     </p>
                     <br>
-                    <h3>詳細説明</h3>
+                    <h3 id="subTitle">詳細説明</h3>
                     <p>本作は、“宝探し” と “バンサバ（弾幕・サバイバル系アクション）” を融合させた新感覚のアクションゲームです。プレイヤーは 「銃モード」 と 「サーチモード」
                         の2つを切り替えながら、敵の群れを突破しつつ宝の在りかを探り当てることを目指します。銃モード では射撃が可能で、迫り来る敵を撃退しながら安全圏を確保できます。一方、サーチモード
                         では攻撃ができない代わりに、宝の位置が「良い・悪い」といった形で徐々に絞り込まれ、探索において重要な手がかりを得られます。また、サーチモード時には敵が波のような特殊パターンで襲来し、通常とは異なる緊張感が生まれます。さらに、プレイヤーの周囲の視界は円状に徐々に狭まり、画面外側が黒く覆われていく独自のギミックが特徴です。この視界は一定時間が経過すると回復し、リズミカルな探索テンポを生み出します。銃撃と探索、緊張と回復が入り混じる、メリハリのあるアクション体験を楽しめる作品となっています。
@@ -539,7 +553,7 @@
             </div>
             <div class="container game-section" data-game="future"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="future">
+                <p class="explanation" data-game="future">
                     PC向けの<span style="color:red;">2Dシュミレーションゲーム</span>です。<br>
                     操作方法はシンプルで<span style="color:red;">クリック（タップ）操作のみ</span>となります。「さく」というテーマを元に<br>
                     ゲームジャムイベントにて制作しました。<br>
@@ -548,7 +562,7 @@
                 </p>
                 <!-- 詳細説明を追加（仮の内容。実際の詳細を入れてください） -->
                 <div id="future-detail" style="display: none;">
-                    <h3>詳細説明</h3><br>
+                    <h3 id="subTitle">詳細説明</h3><br>
                     <p>ゲーム進行を統括するマネージャークラスの設計・実装、各システム間の結合処理、UI周辺の制御、ボタン入力に連動したスコア管理を担当しました。</p>
                 </div>
                 <!-- 動画と表 -->
@@ -601,7 +615,7 @@
             </div>
             <div class="container game-section" data-game="switch"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="switch">
+                <p class="explanation" data-game="switch">
                     PC向けの<span style="color:red;">2Dアクションゲーム</span>です。<br>
                     「表裏」というテーマを元にゲームジャムイベントにて制作しました。<br>
                 </p>
@@ -659,14 +673,14 @@
             </div>
             <div class="container game-section" data-game="xevious"> <!-- game-section クラスを追加 -->
                 <p id="subTitle">作品概要</p>
-                <p class="explanation modal-trigger" data-game="xevious">
+                <p class="explanation" data-game="xevious">
                     PC向けの<span style="color:red;">2Dシューティングゲーム</span>です。<br>
                     1年次の進級制作として開発し、DxLibを用いて<span style="color:red;">『ゼビウス』のステージ1を再現</span>することを目指して制作しました。
                     私は自機部分の実装を担当し、<span style="color:red;">アニメーション表現や操作感</span>にこだわって、原作らしい動きを再現できるよう作り込みました。
                 </p>
                 <!-- 詳細説明を追加（仮の内容。実際の詳細を入れてください） -->
                 <div id="xevious-detail" style="display: none;">
-                    <h3>担当箇所</h3>
+                    <h3 id="subTitle">担当箇所</h3>
                     <p>
                         プレイヤー処理全般の設計・実装を担当しました。入力・移動・攻撃処理からアニメーション制御、当たり判定、被弾演出までを一貫して構築するとともに、照準が地上敵に合った際に変化する演出や正確な照準時のみ発射が成立する挙動、原作に合わせた弾速や加速表現など細部のアニメーション調整に特に注力しました。
                     </p>
