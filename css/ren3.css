@@ -255,10 +255,6 @@ section {
     font-weight: 500;
 }
 
-#game .main a:hover {
-    text-decoration: underline;
-}
-
 #subTitle {
     font-size: 28px;
     color: #10b981;
