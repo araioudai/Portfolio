@@ -152,8 +152,9 @@
             <div class="main">
                 <ol>
                     <li type="1"><a href="#slide">SlideDungeon</a></li>
-                    <li type="1"><a href="#rts">RTS（開発中）</a></li>
-                    <li type="1"><a href="#run">RunPlayer（開発中）</a></li>
+                    <li type="1"><a href="#slime">SlimeMorph(開発中)</a></li>
+                    <li type="1"><a href="#rts">RTS</a></li>
+                    <li type="1"><a href="#run">RunPlayer</a></li>
                     <li type="1"><a href="#bomb">爆弾職人</a></li>
                     <li type="1"><a href="#treasure">Trick or Find</a></li>
                     <li type="1"><a href="#future">目指そう明るい未来</a></li>
@@ -258,6 +259,79 @@
             </div>
         </section>
 
+        <!-- 各ゲームの詳細セクション -->
+        <section id="slime">
+            <div class="title" data-game="slime">
+                <strong>SlimeMorph(開発中)</strong>
+            </div>
+            <div class="container game-section" data-game="slime"> <!-- game-section クラスを追加 -->
+                <p id="subTitle">作品概要</p>
+                <p class="explanation" data-game="slime">
+                    モバイル向けの<span style="color:red;">3Dカジュアルランゲーム</span>です。<br>
+                    <span style="color:red;">タップとスワイプ操作</span>だけで<span style="color:red;">直感的に操作</span>ができます。<br>
+                    本作品において、<span style="color:red;">通信・データ同期管理およびUI描画システム</span>等の設計・実装を担当しています。主に下記を実装しました。<br>
+                    <br>
+                    ・ <span style="color:#10b981;">堅牢なサーバー同期とデータ保護</span><br>
+                    ローカルとサーバーのタイムスタンプ比較による同期判定を構築しました。ローカル優先時は<code>Mathf.Max</code>を用いて最新値を安全に結合し、<span style="color:red;">コインや進行状況の巻き戻りを防止</span>しています。<br>
+                    また、通信中の画面ブロックによる<span style="color:red;">連打・二重送信防止</span>や、通信失敗時に安全な状態へ復元する<span style="color:red;">ロールバック＆リトライ機能</span>を実装し、非同期トラブルを防ぐ設計としています。<br>
+                    ・ <span style="color:#10b981;">RenderTextureによる独立3DモデルUI描画</span><br>
+                    Subカメラの映像を<code>RenderTexture</code>経由でRawImageへ描画する仕組みを構築。描画対象を<code>UI_Character</code>レイヤーに限定することで、<span style="color:red;">背景に影響されない独立した3DキャラクターUI</span>を実現しました。<br>
+                    ・ <span style="color:#10b981;">多言語（ローカライズ）対応</span><br>
+                    言語切り替えシステムと連携し、エラーダイアログを含むUIテキストを動的に更新する仕組みを実装しました。
+                </p>
+                <!-- 詳細説明（モーダル用） -->
+                <div id="slime-detail" style="display: none;">
+                    <h3 id="subTitle">プレイ画面</h3>
+                    <div class="slider sliderHeight">
+                        <div><img src="img/SlimeMorph_Stand.png" alt="待機画面"></div>
+                        <div><img src="img/SlimeMorph_Skin.png" alt="スキン画面"></div>
+                        <div><img src="img/SlimeMorph_Grow.png" alt="育成画面"></div>
+                        <div><img src="img/SlimeMorph_Game.png" alt="ゲーム画面"></div>
+                    </div>
+                </div>
+                <!-- 動画と表 -->
+                <div class="video-and-table-vertical">
+                    <iframe src="https://www.youtube-nocookie.com/embed/xgLoBG_sA4M" class="youtube-iframe" title="作品実演動画（SlimeMorph）"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="main table-area">
+                        <table border="1">
+                            <tr>
+                                <th></th>
+                                <th>内容</th>
+                            </tr>
+                            <tr>
+                                <th>プラットフォーム</th>
+                                <td>Android、iPhone</td>
+                            </tr>
+                            <tr>
+                                <th>言語</th>
+                                <td>C#</td>
+                            </tr>
+                            <tr>
+                                <th>開発環境</th>
+                                <td>Unity 6000.2.6f2</td>
+                            </tr>
+                            <tr>
+                                <th>開発期間</th>
+                                <td>2026/5～2026/7</td>
+                            </tr>
+                            <tr>
+                                <th>制作時間</th>
+                                <td>約90時間</td>
+                            </tr>
+                            <tr>
+                                <th>制作人数</th>
+                                <td>3人</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 詳細を見るボタン -->
+                <button class="modal-trigger detail-btn" data-game="slime">詳細を見る</button>
+            </div>
+        </section>
 
         <section id="rts">
             <div class="title" data-game="rts">
